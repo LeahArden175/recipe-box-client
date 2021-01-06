@@ -33,11 +33,21 @@ export default class RecipeListRoute extends Component {
         this.getRecipes()
     }
 
+
+
     render() {
-        const recipes = this.state.recipes
+        const recipes = this.state.recipes.map((recipe, index) => (
+            <RecipeList 
+            key={index}
+            id={recipe.id}
+            title={recipe.title}
+            date_created={recipe.date_created}
+            user_id={recipe.user_id}
+            />
+        ))
         return (
             <section>
-                <RecipeList recipes={recipes}/>
+                {recipes}
             </section>
         )
     }
