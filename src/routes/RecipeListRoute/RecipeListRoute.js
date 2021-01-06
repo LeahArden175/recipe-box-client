@@ -47,7 +47,9 @@ export default class RecipeListRoute extends Component {
         ))
         return (
             <section>
+                <ul>
                 {recipes}
+                </ul>
             </section>
         )
     }
