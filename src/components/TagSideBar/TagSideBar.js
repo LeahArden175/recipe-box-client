@@ -4,6 +4,9 @@ import Recipe_TagsService from '../../services/recipe_tags-service'
 
 export default class TagSideBar extends Component {
 
+
+
+
     getRecipesForTags = (event) => {
         event.preventDefault();
         Recipe_TagsService.getRecipesForTags(this.props.id)

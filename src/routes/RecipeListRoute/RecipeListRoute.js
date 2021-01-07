@@ -5,6 +5,7 @@ import config from "../../config";
 import TokenService from "../../services/token-services";
 import TagsService from "../../services/tags-service";
 import TagSideBar from "../../components/TagSideBar/TagSideBar";
+import Recipe_TagsService from '../../services/recipe_tags-service'
 
 export default class RecipeListRoute extends Component {
   state = {
@@ -30,6 +31,15 @@ export default class RecipeListRoute extends Component {
     });
   }
 
+  getRecipesForTags = (event) => {
+    event.preventDefault();
+    const tagId = event.currentTarget.value
+    Recipe_TagsService.getRecipesForTags(tagId)
+    .then((res) => {
+        this.setRecipes(res)
+    })
+}
+
   setRecipes = (recipes) => {
     this.setState({ recipes });
   };
@@ -53,19 +63,13 @@ export default class RecipeListRoute extends Component {
         user_id={recipe.user_id}
       />
     ));
-    const tags = this.state.tags.map((tag, index) => (
-        <TagSideBar 
-        key={index}
-        tag_name={tag.tag_name}
-        id={tag.id}
-        />
-    ))
     return (
       <div>
           <section>
-            <ul>
-              {tags}
-              </ul>
+              {this.state.tags.map((tag) => (
+                <button onClick={this.getRecipesForTags} key={tag.id} value={tag.id}>{tag.tag_name}</button>
+              ))}
+             
           </section>
         <section>
           <ul>{recipes}</ul>
