@@ -6,7 +6,6 @@ import LoginRoute from "./routes/LoginRoute/LoginRoute";
 import NotFoundRoute from "./routes/NotFoundRoute/NotFoundRoute";
 import RecipeListRoute from "./routes/RecipeListRoute/RecipeListRoute";
 import RecipeRoute from "./routes/RecipeRoute/RecipeRoute";
-import RegistrationRoute from "./routes/ResgistrationRoute/RegistrationRoute";
 import LandingRoute from "./routes/LandingRoute/LandingRoute";
 import Header from "./components/Header/Header";
 import RegistrationForm from './components/RegistrationForm/RegistrationForm'
@@ -25,7 +24,7 @@ function App() {
           <PrivateRoute exact path="/recipe-list" component={RecipeListRoute} />
           <Route exact path="/recipe/:id" component={RecipeRoute} />
           <Route exact path="/registration" component={RegistrationForm} />
-          {/* <Route component={NotFoundRoute} /> */}
+          <Route component={NotFoundRoute} />
         </Switch>
       </main>
     </div>

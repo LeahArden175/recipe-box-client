@@ -4,7 +4,6 @@ import RecipeBlock from "../RecipeBlock/RecipeBlock";
 
 export default class RecipeList extends Component {
   render() {
-    console.log(this.props);
     return (
       <li>
           <Link to={`recipe/${this.props.id}`}>

@@ -1,10 +1,10 @@
 import config from '../config'
 import TokenService from './token-services'
 
-const RecipesService = {
+const TagsService = {
 
-    getRecipes(){
-        return fetch(`${config.API_ENDPOINT}/recipes`, {
+    getTags(){
+        return fetch(`${config.API_ENDPOINT}/tags`, {
             headers : {
                 authorization: `bearer ${TokenService.getAuthToken()}`,
             },
@@ -14,8 +14,7 @@ const RecipesService = {
               ? res.json().then(e => Promise.reject(e))
               : res.json()
           )
-          .then(this.setRecipes)
     }
 }
 
-export default RecipesService
+export default TagsService
