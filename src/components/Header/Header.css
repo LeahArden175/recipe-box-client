@@ -1,0 +1,13 @@
+.Header__logged-in{
+    display: flex;
+    justify-content: space-between;
+}
+.link{
+    text-decoration: none;
+    color: rgb(83, 79, 79);
+}
+.header{
+    color: rgb(83, 79, 79);
+    font-size: 27px;
+    margin-top: 25px;
+}

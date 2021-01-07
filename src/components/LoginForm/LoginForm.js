@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import AuthApiService from '../../services/auth-api-services'
 import TokenService from '../../services/token-services'
+import './LoginForm.css'
 
 export default class LoginForm extends Component {
 

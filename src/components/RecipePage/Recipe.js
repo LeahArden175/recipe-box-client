@@ -3,10 +3,10 @@ import moment from "moment";
 import { Link } from "react-router-dom";
 import InstructionBlock from "../InstructionBlock/InstructionBlock";
 import IngredientBlock from "../IngredientBlock/IngredientBlock";
+import './Recipe.css'
 
 export default class Recipe extends Component {
   render() {
-    // console.log(this.props)
     const recipes = this.props.recipes;
     const instructions = this.props.instructions;
     const ingredients = this.props.ingredients;

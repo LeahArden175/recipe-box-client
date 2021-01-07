@@ -4,6 +4,7 @@ import config from "../../config";
 import TokenService from "../../services/token-services";
 import InstructionsService from "../../services/instructions-service";
 import IngredientsService from "../../services/ingredients-services";
+import './RecipeRoute.css'
 
 export default class RecipeRoute extends Component {
   state = {
@@ -55,14 +56,13 @@ export default class RecipeRoute extends Component {
   }
 
   render() {
-    // console.log(this.state);
     const recipeId = this.props.match.params.id;
     const history = this.props.history;
     const recipes = this.state.recipes;
     const instructions = this.state.instructions;
     const ingredients = this.state.ingredients;
     return (
-      <section>
+      <section className="recipe-section">
         <Recipe
           instructions={instructions}
           recipeId={recipeId}

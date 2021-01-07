@@ -1,0 +1,18 @@
+.list-items {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    margin: auto;
+    border: solid #696D7D;
+    border-radius:15px;
+    background-color: #8D9F87;
+    margin-bottom: 30px;
+  }
+  .recipe-title{
+      font-size: 20px;
+      text-decoration: none;
+  }
+
+  

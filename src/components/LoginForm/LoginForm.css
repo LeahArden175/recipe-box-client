@@ -1,0 +1,70 @@
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: solid;
+  padding: 30px;
+  margin: 20px 40px;
+  background-color: #8d9f87;
+  border-radius: 15px;
+}
+.sign-up-button-div {
+  display: flex;
+  flex-direction: column;
+}
+.sign-up-p {
+  margin-bottom: 5px;
+}
+.login-page-buttons {
+  box-shadow: inset 0px 0px 14px -3px #b5b8ae;
+  background: linear-gradient(to bottom, #3c3d41 5%, #3c3d41 100%);
+  background-color: #3c3d41;
+  border-radius: 6px;
+  border: 1px solid #b2b8ad;
+  display: inline-block;
+  cursor: pointer;
+  color: #a0b09b;
+  font-size: 15px;
+  font-weight: bold;
+  margin: auto;
+  margin-top: 15px;
+  height: 35px;
+  padding: 10px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #3c3d41;
+}
+
+/*-----GROUPS AND ITEMS (DESKTOP)-----*/
+
+@media all and (min-width: 800px) {
+  .login-form-div {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-items: center;
+    text-align: center;
+    margin: auto;
+    font-family: "Merienda", cursive;
+    width: 100%;
+  }
+
+  .loginForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: solid;
+    padding: 20px;
+    width: 30%;
+    background-color: #8d9f87;
+    border-radius: 15px;
+    text-align: left;
+  }
+
+  .sign-up-p {
+    text-align: center;
+  }
+}
