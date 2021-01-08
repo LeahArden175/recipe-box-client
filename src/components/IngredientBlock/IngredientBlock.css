@@ -1,8 +1,9 @@
 .ingredient-list-items{
     display: flex;
     text-align: left;
-    width: 60%;
+    width: 90%;
     margin: auto;
+    margin-bottom: 5px;
 }
 
 .one-ingredient{

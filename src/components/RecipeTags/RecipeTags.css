@@ -1,0 +1,13 @@
+.recipe-tag-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .tag-p{
+      margin: 0 10px;
+  }
+  .tag-h5{
+      font-size: 16px;
+      margin: 10px;
+  }

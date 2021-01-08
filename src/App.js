@@ -19,7 +19,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={LandingRoute} />
           <Route exact path="/add-recipe" component={AddRecipeRoute} />
-          <Route exact path="/edit-recipe" component={EditRecipeRoute} />
+          <Route exact path="/edit-recipe/:id" component={EditRecipeRoute} />
           <PrivateRoute exact path="/recipe-list" component={RecipeListRoute} />
           <Route exact path="/recipe/:id" component={RecipeRoute} />
           <Route exact path="/registration" component={RegistrationForm} />

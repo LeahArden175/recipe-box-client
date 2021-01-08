@@ -1,6 +1,7 @@
 .Header__logged-in{
     display: flex;
     justify-content: space-between;
+    margin: 15px;
 }
 .link{
     text-decoration: none;
