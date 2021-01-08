@@ -1,0 +1,10 @@
+.ingredient-list-items{
+    display: flex;
+    text-align: left;
+    width: 60%;
+    margin: auto;
+}
+
+.one-ingredient{
+    margin: 5px;
+}

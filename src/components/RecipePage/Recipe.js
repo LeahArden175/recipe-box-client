@@ -3,9 +3,40 @@ import moment from "moment";
 import { Link } from "react-router-dom";
 import InstructionBlock from "../InstructionBlock/InstructionBlock";
 import IngredientBlock from "../IngredientBlock/IngredientBlock";
-import './Recipe.css'
+import RecipeTags from '../RecipeTags/RecipeTags'
+import "./Recipe.css";
+
 
 export default class Recipe extends Component {
+  state = {
+    instructions: [],
+    recipe: this.props.recipeId,
+  };
+
+  handleDeleteRecipe = (event) => {
+    event.preventDefault();
+    console.log("clicked");
+    const recipe_id = this.props.recipeId;
+    this.findInstructions();
+    console.log(this.props);
+  };
+
+  findInstructions = () => {
+    const id = this.props.recipeId;
+    const instructions = this.props.instructions.filter(
+      (instruction) => instruction.recipe_id == id
+    );
+    const instructionId = instructions.find(
+      (instruction) => instruction.recipe_id == id
+    );
+    console.log(instructionId, "i");
+    this.setState({ instructions });
+  };
+
+  setInstructionId = (instructionId) => {
+    this.setState({ instructionId });
+  };
+
   render() {
     const recipes = this.props.recipes;
     const instructions = this.props.instructions;
@@ -53,12 +84,20 @@ export default class Recipe extends Component {
         <div>
           <Link to="/recipe-list">Go back to list</Link>
         </div>
-        <p>{findRecipe.title}</p>
-        <p>{formattedDate}</p>
-        <div>
-          <ul>{getIngredients}</ul>
+        <h2>{findRecipe.title}</h2>
+        <p>Created: {formattedDate}</p>
+        <div className="ingredients-div">
+          <ul className="ingredients-list">{getIngredients}</ul>
         </div>
-        <ol>{getInstructions}</ol>
+        <div className='instructions-div'>
+          <ol className='instructions-list'>{getInstructions}</ol>
+        </div>
+        <div>
+        <button onClick={this.handleDeleteRecipe}>Delete recipe</button>
+        </div>
+        <div>
+          <RecipeTags id={this.props.recipeId}/>
+        </div>
       </div>
     );
   }

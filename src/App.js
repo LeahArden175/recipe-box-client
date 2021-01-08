@@ -9,6 +9,7 @@ import LandingRoute from "./routes/LandingRoute/LandingRoute";
 import Header from "./components/Header/Header";
 import RegistrationForm from './components/RegistrationForm/RegistrationForm'
 import PrivateRoute from './components/PrivateRoute/PrivateRoute'
+import Footer from './components/Footer/Footer'
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route exact path="/registration" component={RegistrationForm} />
           <Route component={NotFoundRoute} />
         </Switch>
+        <Footer />
       </main>
     </div>
   );

@@ -60,13 +60,7 @@ export default class Header extends Component {
           </Link>
         </div>
         <h1 className="header">
-          <span role="img" aria-label="seedling">
-            🌱
-          </span>{" "}
-          Plant-Dex{" "}
-          <span role="img" aria-label="seedling">
-            🌱
-          </span>
+          Recipe Box
         </h1>
       </div>
     );

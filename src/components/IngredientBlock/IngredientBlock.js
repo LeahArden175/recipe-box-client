@@ -1,11 +1,13 @@
 import React, { Component } from "react";
+import './IngredientBlock.css'
 
 export default class IngredientBlock extends Component {
   render() {
-    console.log(this.props);
     return (
-        <li>
-        <p>{this.props.food_item}  {this.props.amount}   {this.props.unit}</p>
+        <li className='ingredient-list-items'>
+        <p className="one-ingredient">{this.props.amount}</p>
+        <p className="one-ingredient">{this.props.unit}</p>
+        <p className="one-ingredient">{this.props.food_item}</p>
         </li>
     );
   }
