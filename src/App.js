@@ -10,6 +10,7 @@ import Header from "./components/Header/Header";
 import RegistrationForm from './components/RegistrationForm/RegistrationForm'
 import PrivateRoute from './components/PrivateRoute/PrivateRoute'
 import Footer from './components/Footer/Footer'
+import TestRecipeRoute from './routes/TestRecipeRoute/TestRecipeRoute'
 
 function App() {
   return (
@@ -21,7 +22,7 @@ function App() {
           <Route exact path="/add-recipe" component={AddRecipeRoute} />
           <Route exact path="/edit-recipe/:id" component={EditRecipeRoute} />
           <PrivateRoute exact path="/recipe-list" component={RecipeListRoute} />
-          <Route exact path="/recipe/:id" component={RecipeRoute} />
+          <Route exact path="/recipe/:id" component={TestRecipeRoute} />
           <Route exact path="/registration" component={RegistrationForm} />
           <Route component={NotFoundRoute} />
         </Switch>

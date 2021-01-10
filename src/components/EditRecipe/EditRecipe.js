@@ -59,6 +59,9 @@ export default class EditRecipe extends Component {
     //get id from either the input name or the data-attribute
     //figure out which ingreiednts need to be updated
     //repeat same but for ingredients
+    //now there are 2 arrays that need to be PATCHED on the backend
+    //for each instruction in the changedInstructions array do a fetch
+    //do same for ingredients
     const instructionsToSubmit = {
       step_info: e.target["step_info"].value,
     };

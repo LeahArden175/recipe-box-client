@@ -3,6 +3,7 @@ import RecipesService from "../../services/recipe-services";
 import EditRecipe from "../../components/EditRecipe/EditRecipe";
 import InstructionsService from "../../services/instructions-service";
 import IngredientsService from "../../services/ingredients-services";
+import TestEditRecipe from '../../components/TestEditRecipe/TestEditRecipe'
 
 export default class EditRecipeRoute extends Component {
   state = {
@@ -48,18 +49,18 @@ export default class EditRecipeRoute extends Component {
   }
 
   render() {
-    const currentRecipeId = this.props.match.params.id;
+    const currentEditId = this.props.match.params.id;
     const recipes = this.state.recipes;
     const instructions = this.state.instructions;
     const ingredients = this.state.ingredients;
     const history = this.props.history
-    //const currentRecipe = recipes && recipes.find((recipe) => recipe.id == currentRecipeId)
+    //const currentRecipe = recipes && recipes.find((recipe) => recipe.id == currentEditId)
 
     return (
       <div>
-        <EditRecipe
+        <TestEditRecipe
         //currentRecipe={currentRecipe}
-          currentRecipeId={currentRecipeId}
+          currentEditId={currentEditId}
           instructions={instructions}
           ingredients={ingredients}
           recipes={recipes}
