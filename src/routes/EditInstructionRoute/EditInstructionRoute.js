@@ -3,7 +3,7 @@ import RecipesService from "../../services/recipe-services";
 import EditRecipe from "../../components/EditRecipe/EditRecipe";
 import InstructionsService from "../../services/instructions-service";
 import IngredientsService from "../../services/ingredients-services";
-import TestEditRecipe from '../../components/TestEditRecipe/TestEditRecipe'
+import EditInstruction from '../../components/EditInstruction/EditInstruction'
 
 export default class EditRecipeRoute extends Component {
   state = {
@@ -58,7 +58,7 @@ export default class EditRecipeRoute extends Component {
 
     return (
       <div>
-        <TestEditRecipe
+        <EditInstruction
         //currentRecipe={currentRecipe}
           currentEditId={currentEditId}
           instructions={instructions}

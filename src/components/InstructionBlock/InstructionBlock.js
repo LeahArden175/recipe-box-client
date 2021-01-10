@@ -7,7 +7,7 @@ export default class InstructionBlock extends Component {
       <li>
         <p>{this.props.step_info}</p>
         <div className="edit-button-div">
-          <Link to={`/edit-recipe/${this.props.id}`} className="recipe-button">
+          <Link to={`/edit-instruction/${this.props.id}`} className="recipe-button">
             Edit
           </Link>
         </div>

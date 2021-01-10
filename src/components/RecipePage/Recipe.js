@@ -84,7 +84,7 @@ export default class Recipe extends Component {
         <p>Created: {formattedDate}</p>
         <div className="edit-button-div">
           <Link
-            to={`/edit-recipe/${this.props.recipeId}`}
+            to={`/edit-title/${this.props.recipeId}`}
             className="recipe-button"
           >
             Edit

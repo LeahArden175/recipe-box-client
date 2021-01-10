@@ -1,12 +1,13 @@
-import React, { Component, useImperativeHandle } from "react";
+import React, { Component } from "react";
 import InstructionsService from "../../services/instructions-service";
 import config from "../../config";
 import TokenService from "../../services/token-services";
 
-export default class TestEditRecipe extends Component {
+export default class EditInstruction extends Component {
   state = {
     step_info: "",
-    recipeId: ''
+    recipeId: '',
+    id: ''
   };
 
   handleSubmit = (event) => {
@@ -40,28 +41,19 @@ export default class TestEditRecipe extends Component {
       );
       const step_info = currentInstruction.step_info;
       const recipeId = currentInstruction.recipe_id
+      const id = currentInstruction.id
       this.setState({ step_info });
       this.setState({recipeId })
+      this.setState({ id })
     });
   };
 
   render() {
-    console.log(this.state);
-    const currentId = this.props.currentEditId;
-    const instructions = this.props.instructions;
-
-    const findCurrentInstruction = instructions.find(
-      (instruction) => instruction.id == currentId
-    );
-
-    if (!findCurrentInstruction) {
-      return "loading";
-    }
     return (
       <form onSubmit={this.handleSubmit}>
         <label htmlFor="instruction">Instruction to edit:</label>
         <input
-          key={findCurrentInstruction.id}
+          key={this.state.id}
           type="text"
           name="instruction_info"
           value={this.state.step_info}
