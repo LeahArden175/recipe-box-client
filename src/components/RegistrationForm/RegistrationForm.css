@@ -1,0 +1,120 @@
+.new-user-form-div {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-items: center;
+  text-align: center;
+  margin: auto;
+  font-family: "Merienda", cursive;
+}
+
+.new-user-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 30px;
+    font-weight: bold;
+    font-family: 'Fraunces', serif;
+}
+
+.input {
+  width: 60%;
+  margin: auto;
+}
+
+.input-labels {
+  padding-top: 10px;
+}
+
+.new-user-button-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.new-user-submit-button {
+    box-shadow: inset 0px 0px 14px -3px #b5b8ae;
+    background: linear-gradient(to bottom, #681b1b 5%, #300707 100%);
+    background-color: #3c3d41;
+    border-radius: 6px;
+    border: 1px solid #b8b0ad;
+    display: inline-block;
+    cursor: pointer;
+    color: #f2d0d0;
+    font-size: 15px;
+    font-weight: bold;
+    margin: 15px;
+    height: 35px;
+    padding: 10px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #0b0b0c;
+    font-weight: bold;
+    font-family: 'Fraunces', serif;
+}
+
+/*-----GROUPS AND ITEMS (DESKTOP)-----*/
+
+@media all and (min-width: 800px) {
+  .new-user-form-div {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-items: center;
+    text-align: center;
+    margin: auto;
+    font-family: "Merienda", cursive;
+    width: 100%;
+  }
+
+  .new-user-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: solid;
+    padding: 20px;
+    width: 30%;
+    background-color: #8d9f87;
+    border-radius: 15px;
+    text-align: left;
+  }
+
+  .input {
+    width: 60%;
+    margin: auto;
+  }
+
+  .input-labels {
+    padding-top: 10px;
+  }
+
+  .new-user-submit-button {
+    box-shadow: inset 0px 0px 14px -3px #b5b8ae;
+    background: linear-gradient(to bottom, #681b1b 5%, #300707 100%);
+    background-color: #3c3d41;
+    border-radius: 6px;
+    border: 1px solid #b8b0ad;
+    display: inline-block;
+    cursor: pointer;
+    color: #f2d0d0;
+    font-size: 15px;
+    font-weight: bold;
+    margin: auto;
+    margin-top: 15px;
+    height: 35px;
+    padding: 10px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #0b0b0c;
+    font-weight: bold;
+    font-family: "Fraunces", serif;
+  }
+
+  .new-user-button-div {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+}

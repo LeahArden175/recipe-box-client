@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import config from '../../config'
+import './RegistrationForm.css'
 
 export default class RegistrationForm extends Component {
 
@@ -59,7 +60,7 @@ export default class RegistrationForm extends Component {
               id="reg-username"
               />
             <label className="input-labels" htmlFor="full_name">
-              Full Name:
+              Full Name
             </label>
             <input 
               className="input"
