@@ -1,14 +1,26 @@
 .Header__logged-in{
     display: flex;
     justify-content: space-between;
-    margin: 15px;
+    
 }
 .link{
     text-decoration: none;
-    color: rgb(83, 79, 79);
+    color: rgb(36, 17, 17);
+    font-weight: bold;
+    font-family: 'Fraunces', serif;
+    margin: 15px;
+}
+.header-div{
+    display: flex;
+    justify-content: center;
+    border-top: 4px solid rgb(101, 31, 31);
+    border-bottom: 4px solid rgb(101, 31, 31);
+    background-color: rgb(196, 135, 135);
 }
 .header{
-    color: rgb(83, 79, 79);
+    color: rgb(57, 2, 2);
     font-size: 27px;
-    margin-top: 25px;
+    margin-top: 20px;
+    font-family: 'Fraunces', serif;
+    font-weight: bold;
 }

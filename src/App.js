@@ -8,7 +8,6 @@ import LandingRoute from "./routes/LandingRoute/LandingRoute";
 import Header from "./components/Header/Header";
 import RegistrationForm from './components/RegistrationForm/RegistrationForm'
 import PrivateRoute from './components/PrivateRoute/PrivateRoute'
-import Footer from './components/Footer/Footer'
 import TestRecipeRoute from './routes/TestRecipeRoute/TestRecipeRoute'
 import EditIngredientRoute from './routes/EditIngredientRoute/EditIngredientRoute'
 import EditInstructionRoute from './routes/EditInstructionRoute/EditInstructionRoute'
@@ -32,7 +31,6 @@ function App() {
           <Route exact path='/edit-ingredient/:id' component={EditIngredientRoute}/>
           <Route component={NotFoundRoute} />
         </Switch>
-        <Footer />
       </main>
     </div>
   );

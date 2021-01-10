@@ -59,9 +59,11 @@ export default class Header extends Component {
             Logout
           </Link>
         </div>
+        <div className='header-div'>
         <h1 className="header">
           Recipe Box
         </h1>
+        </div>
       </div>
     );
   }

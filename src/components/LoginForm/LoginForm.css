@@ -4,11 +4,9 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  border: solid;
   padding: 30px;
-  margin: 20px 40px;
-  background-color: #8d9f87;
-  border-radius: 15px;
+  font-weight: bold;
+  font-family: 'Fraunces', serif;
 }
 .sign-up-button-div {
   display: flex;
@@ -19,13 +17,13 @@
 }
 .login-page-buttons {
   box-shadow: inset 0px 0px 14px -3px #b5b8ae;
-  background: linear-gradient(to bottom, #3c3d41 5%, #3c3d41 100%);
+  background: linear-gradient(to bottom, #681b1b 5%, #300707 100%);
   background-color: #3c3d41;
   border-radius: 6px;
-  border: 1px solid #b2b8ad;
+  border: 1px solid #b8b0ad;
   display: inline-block;
   cursor: pointer;
-  color: #a0b09b;
+  color: #f2d0d0;
   font-size: 15px;
   font-weight: bold;
   margin: auto;
@@ -33,7 +31,9 @@
   height: 35px;
   padding: 10px;
   text-decoration: none;
-  text-shadow: 0px 1px 0px #3c3d41;
+  text-shadow: 0px 1px 0px #0b0b0c;
+  font-weight: bold;
+  font-family: 'Fraunces', serif;
 }
 
 /*-----GROUPS AND ITEMS (DESKTOP)-----*/
