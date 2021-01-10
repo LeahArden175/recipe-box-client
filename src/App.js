@@ -11,6 +11,8 @@ import RegistrationForm from './components/RegistrationForm/RegistrationForm'
 import PrivateRoute from './components/PrivateRoute/PrivateRoute'
 import Footer from './components/Footer/Footer'
 import TestRecipeRoute from './routes/TestRecipeRoute/TestRecipeRoute'
+import EditIngredientRoute from './routes/EditIngredientRoute/EditIngredientRoute'
+
 
 function App() {
   return (
@@ -24,6 +26,7 @@ function App() {
           <PrivateRoute exact path="/recipe-list" component={RecipeListRoute} />
           <Route exact path="/recipe/:id" component={TestRecipeRoute} />
           <Route exact path="/registration" component={RegistrationForm} />
+          <Route exact path='/edit-ingredient/:id' component={EditIngredientRoute}/>
           <Route component={NotFoundRoute} />
         </Switch>
         <Footer />
