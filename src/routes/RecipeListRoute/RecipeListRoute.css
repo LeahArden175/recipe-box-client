@@ -1,3 +1,47 @@
+.recipe-list-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Fraunces', serif;
+    font-weight: bold;
+}
+.recipe-tag-search{
+    text-align: center;
+}
+.tags-h4{
+    font-size: 23px;
+    margin: 15px;
+}
+.tag-button{
+    box-shadow: inset 0px 0px 14px -3px #b5b8ae;
+    background: linear-gradient(to bottom, #681b1b 5%, #300707 100%);
+    background-color: #3c3d41;
+    border-radius: 6px;
+    border: 1px solid #b8b0ad;
+    display: inline-block;
+    cursor: pointer;
+    color: #f2d0d0;
+    font-size: 15px;
+    font-weight: bold;
+    margin: auto;
+    margin-top: 15px;
+    height: 35px;
+    padding: 10px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #0b0b0c;
+    font-weight: bold;
+    font-family: 'Fraunces', serif;
+}
 .recipe-list{
     text-decoration: none;
+    margin: auto;
 }
+.items {
+    display: flex;
+    flex-direction: row;
+    flex-flow: row wrap;
+    justify-content: center;
+    text-align: center;
+    list-style: none;
+  }

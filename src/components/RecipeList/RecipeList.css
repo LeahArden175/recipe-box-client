@@ -5,14 +5,14 @@
     align-items: center;
     width: 70%;
     margin: auto;
-    border: solid #696D7D;
-    border-radius:15px;
-    background-color: #8D9F87;
-    margin-bottom: 30px;
+    border: solid #1f1817;
+    background-color: #682907;
+    margin-top: 15px;
   }
   .recipe-title{
       font-size: 20px;
       text-decoration: none;
+      color: white;
   }
 
   

@@ -80,23 +80,24 @@ export default class RecipeListRoute extends Component {
     ));
 
     return (
-      <div>
-        <section>
-          <h4>Tags:</h4>
+      <div className='recipe-list-div'>
+        <div className='recipe-tag-search'>
+          <h4 className='tags-h4'>Tags:</h4>
           {this.state.tags.map((tag) => (
             <button
               onClick={this.getRecipesForTags}
               key={tag.id}
               value={tag.id}
+              className='tag-button'
             >
               {tag.tag_name}
             </button>
           ))}
-          <button onClick={this.handleGetRecipesClick}>All</button>
-        </section>
-        <section className='recipe-list'>
-          <ul className='recipe-list'>{recipes}</ul>
-        </section>
+          <button className='tag-button' onClick={this.handleGetRecipesClick}>All</button>
+        </div>
+        <div className='items'>
+          {recipes}
+        </div>
       </div>
     );
   }
