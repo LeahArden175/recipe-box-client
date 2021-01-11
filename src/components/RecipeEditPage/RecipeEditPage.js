@@ -98,7 +98,7 @@ export default class Recipe extends Component {
           <ol className="instructions-list">{getInstructions}</ol>
         </div>
         <div className="delete-button-div">
-          <Link className="recipe-button">
+          <Link className="recipe-button" to={`/recipe/${this.props.recipeId}`}>
             Cancel
           </Link>
         </div>
