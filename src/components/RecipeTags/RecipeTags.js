@@ -27,7 +27,7 @@ export default class RecipeTags extends Component {
   render() {
     console.log(this.state)
     return (
-      <div>
+      <div className='tag-div'>
         <h5 className='tag-h5'>Tags:</h5>
         <div className='recipe-tag-div'>
         {this.state.tags.map((tag) => (

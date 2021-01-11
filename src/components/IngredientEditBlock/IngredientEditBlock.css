@@ -3,9 +3,50 @@
     text-align: left;
     width: 90%;
     margin: auto;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 }
 
 .one-ingredient{
     margin: 5px;
 }
+.recipe-button-div{
+    display: flex;
+
+}
+.ingredient{
+    display: flex;
+    text-align: left;
+    width: 90%;
+    margin: auto;
+    margin-left: -40px;
+}
+.recipe-button {
+    border-top: 1px solid #0d0d0d;
+    background: #d66598;
+    background: -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      from(#de383a),
+      to(#d66598)
+    );
+    background: -webkit-linear-gradient(top, #de383a, #d66598);
+    background: -moz-linear-gradient(top, #de383a, #d66598);
+    background: -ms-linear-gradient(top, #de383a, #d66598);
+    background: -o-linear-gradient(top, #de383a, #d66598);
+    padding: 5px 10px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    -webkit-box-shadow: rgba(0, 0, 0, 1) 0 1px 0;
+    -moz-box-shadow: rgba(0, 0, 0, 1) 0 1px 0;
+    box-shadow: rgba(0, 0, 0, 1) 0 1px 0;
+    text-shadow: rgba(0, 0, 0, 0.4) 0 1px 0;
+    color: white;
+    font-size: 14px;
+    font-family: Georgia, Serif;
+    text-decoration: none;
+    vertical-align: middle;
+    font-weight: bold;
+    font-family: 'Fraunces', serif;
+  }

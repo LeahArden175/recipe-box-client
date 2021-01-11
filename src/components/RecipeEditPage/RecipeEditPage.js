@@ -79,17 +79,17 @@ export default class Recipe extends Component {
       .format("MMM Do YYYY");
 
     return (
-      <div>
-        <h2>{findRecipe.title}</h2>
-        <p>Created: {formattedDate}</p>
-        <div className="edit-button-div">
+      <div className="recipe-page-div">
+        <div className='edit-button-div'>
+        <h2 className="title-h2">{findRecipe.title}</h2>
           <Link
             to={`/edit-title/${this.props.recipeId}`}
-            className="recipe-button"
+            className="recipe-button-edit"
           >
             Edit
           </Link>
-        </div>
+          </div>
+        <p className='date'>Created: {formattedDate}</p>
         <div className="ingredients-div">
           <ul className="ingredients-list">{getIngredients}</ul>
         </div>

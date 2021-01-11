@@ -3,11 +3,17 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    text-align: center;
   }
   .tag-p{
       margin: 0 10px;
+      font-weight: bold;
+    font-family: 'Fraunces', serif;
   }
   .tag-h5{
       font-size: 16px;
       margin: 10px;
+      text-align: center;
+      font-weight: bold;
+    font-family: 'Fraunces', serif;
   }

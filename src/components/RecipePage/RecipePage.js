@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import InstructionBlock from "../InstructionBlock/InstructionBlock";
 import IngredientBlock from "../IngredientBlock/IngredientBlock";
 import RecipeTags from "../RecipeTags/RecipeTags";
+import './RecipePage.css'
 
 export default class RecipePage extends Component {
   state = {
@@ -78,9 +79,9 @@ export default class RecipePage extends Component {
       .format("MMM Do YYYY");
 
     return (
-      <div>
-        <h2>{findRecipe.title}</h2>
-        <p>Created: {formattedDate}</p>
+      <div className="recipe-page-div">
+        <h2 className="title-h2">{findRecipe.title}</h2>
+        <p className='date'>Created: {formattedDate}</p>
         <div className="edit-button-div">
           <Link
             to={`/edit-recipe/${this.props.recipeId}`}
@@ -89,9 +90,11 @@ export default class RecipePage extends Component {
             Edit
           </Link>
         </div>
+        <p className="ingredient-instruction-title">Ingredients:</p>
         <div className="ingredients-div">
           <ul className="ingredients-list">{getIngredients}</ul>
         </div>
+        <p className="ingredient-instruction-title">Instructions:</p>
         <div className="instructions-div">
           <ol className="instructions-list">{getInstructions}</ol>
         </div>
