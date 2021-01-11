@@ -7,34 +7,6 @@ import RecipeTags from "../RecipeTags/RecipeTags";
 import "./RecipePage.css";
 
 export default class RecipePage extends Component {
-  state = {
-    instructions: [],
-    recipe: this.props.recipeId,
-  };
-
-  handleDeleteRecipe = (event) => {
-    event.preventDefault();
-    console.log("clicked");
-    const recipe_id = this.props.recipeId;
-    this.findInstructions();
-    console.log(this.props);
-  };
-
-  findInstructions = () => {
-    const id = this.props.recipeId;
-    const instructions = this.props.instructions.filter(
-      (instruction) => instruction.recipe_id == id
-    );
-    const instructionId = instructions.find(
-      (instruction) => instruction.recipe_id == id
-    );
-    console.log(instructionId, "i");
-    this.setState({ instructions });
-  };
-
-  setInstructionId = (instructionId) => {
-    this.setState({ instructionId });
-  };
 
   render() {
     const recipes = this.props.recipes;

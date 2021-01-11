@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import RecipesService from "../../services/recipe-services";
-import EditRecipe from "../../components/EditRecipe/EditRecipe";
 import InstructionsService from "../../services/instructions-service";
 import IngredientsService from "../../services/ingredients-services";
 import EditInstruction from '../../components/EditInstruction/EditInstruction'

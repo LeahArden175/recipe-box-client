@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import RecipesService from "../../services/recipe-services";
 import config from "../../config";
 import TokenService from "../../services/token-services";
-import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 export default class EditTitle extends Component {
 

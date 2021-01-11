@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
+import AddRecipe from '../../components/AddRecipe/AddRecipe';
 
 export default class AddRecipeRoute extends Component {
 
     render() {
+       const history = this.props.history
         return (
             <section>
-                <p>ADD RECIPE ROUTE</p>
+                <AddRecipe history={history}/>
             </section>
         )
     }

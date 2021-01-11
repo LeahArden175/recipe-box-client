@@ -45,3 +45,8 @@
     text-align: center;
     list-style: none;
   }
+.add-recipe-button{
+    font-family: 'Fraunces', serif;
+    font-weight: bold;
+    color: white;
+}
