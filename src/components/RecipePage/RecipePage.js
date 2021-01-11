@@ -4,9 +4,26 @@ import { Link } from "react-router-dom";
 import InstructionBlock from "../InstructionBlock/InstructionBlock";
 import IngredientBlock from "../IngredientBlock/IngredientBlock";
 import RecipeTags from "../RecipeTags/RecipeTags";
+import config from '../../config'
+import TokenService from '../../services/token-services'
 import "./RecipePage.css";
 
 export default class RecipePage extends Component {
+
+  handleDeleteRecipe = (event) => {
+    event.preventDefault();
+    const recipeId = this.props.recipeId
+    fetch(`${config.API_ENDPOINT}/recipe/${recipeId}`, {
+      method: 'DELETE',
+      headers: {
+        authorization: `bearer ${TokenService.getAuthToken()}`,
+        'content-type': 'application/json'
+      },
+    })
+    .then((res) => {
+      if (!res.ok) return res.json().then((event = Promise.reject(event)));
+    })
+  }
 
   render() {
     const recipes = this.props.recipes;
