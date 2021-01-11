@@ -80,6 +80,7 @@ export default class Recipe extends Component {
 
     return (
       <div className="recipe-page-div">
+        <p className='edit-message'>Choose which item you would like to edit</p>
         <div className='edit-button-div'>
         <h2 className="title-h2">{findRecipe.title}</h2>
           <Link
@@ -97,11 +98,10 @@ export default class Recipe extends Component {
           <ol className="instructions-list">{getInstructions}</ol>
         </div>
         <div className="delete-button-div">
-          <button className="recipe-button" onClick={this.handleDeleteRecipe}>
-            Delete recipe
-          </button>
+          <Link className="recipe-button">
+            Cancel
+          </Link>
         </div>
-        <RecipeTags id={this.props.recipeId} />
       </div>
     );
   }

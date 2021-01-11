@@ -32,7 +32,8 @@
   text-align: left;
 }
 .delete-button-div {
-  margin: 10px;
+  margin: 20px;
+  margin-top: 25px;
 }
 .recipe-button-edit {
   border-top: 1px solid #0d0d0d;
@@ -86,4 +87,9 @@
   justify-content: center;
   align-items: center;
 }
-
+.edit-message{
+  text-align: center;
+  font-family: 'Fraunces', serif;
+  font-weight: bold;
+  margin-top: 25px;
+}
