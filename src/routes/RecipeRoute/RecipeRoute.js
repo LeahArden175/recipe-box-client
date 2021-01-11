@@ -32,9 +32,9 @@ export default class RecipeRoute extends Component {
   }
 
   getIngredients() {
-    IngredientsService.getIngredients().then((ingredients) => [
-      this.setIngredients(ingredients),
-    ]);
+    IngredientsService.getIngredients().then((ingredients) => {
+      this.setIngredients(ingredients)
+    });
   }
 
   setRecipes = (recipes) => {

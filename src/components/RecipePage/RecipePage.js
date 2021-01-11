@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import InstructionBlock from "../InstructionBlock/InstructionBlock";
 import IngredientBlock from "../IngredientBlock/IngredientBlock";
 import RecipeTags from "../RecipeTags/RecipeTags";
-import './RecipePage.css'
+import "./RecipePage.css";
 
 export default class RecipePage extends Component {
   state = {
@@ -45,11 +45,16 @@ export default class RecipePage extends Component {
     const findInstructions =
       instructions &&
       instructions.filter((instruction) => instruction.recipe_id == id);
+
     const findIngredients =
       ingredients &&
       ingredients.filter((ingredient) => ingredient.recipe_id == id);
 
-    const getInstructions = findInstructions.map((instruction, index) => (
+    const sortedIngredients = findIngredients.sort((a, b) => a.id - b.id)  
+
+    const sortedInstructions = findInstructions.sort((a, b) => a.id - b.id);
+
+    const getInstructions = sortedInstructions.map((instruction, index) => (
       <InstructionBlock
         key={index}
         id={instruction.id}
@@ -59,7 +64,7 @@ export default class RecipePage extends Component {
       />
     ));
 
-    const getIngredients = findIngredients.map((ingredient, index) => (
+    const getIngredients = sortedIngredients.map((ingredient, index) => (
       <IngredientBlock
         key={index}
         id={ingredient.id}
@@ -81,7 +86,7 @@ export default class RecipePage extends Component {
     return (
       <div className="recipe-page-div">
         <h2 className="title-h2">{findRecipe.title}</h2>
-        <p className='date'>Created: {formattedDate}</p>
+        <p className="date">Created: {formattedDate}</p>
         <div className="edit-button-div">
           <Link
             to={`/edit-recipe/${this.props.recipeId}`}
@@ -94,7 +99,7 @@ export default class RecipePage extends Component {
         <div className="ingredients-div">
           <ul className="ingredients-list">{getIngredients}</ul>
         </div>
-        <p className="ingredient-instruction-title">Instructions:</p>
+        <p className="ingredient-instruction-title">Ingredients:</p>
         <div className="instructions-div">
           <ol className="instructions-list">{getInstructions}</ol>
         </div>

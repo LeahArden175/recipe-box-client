@@ -49,7 +49,12 @@ export default class Recipe extends Component {
       ingredients &&
       ingredients.filter((ingredient) => ingredient.recipe_id == id);
 
-    const getInstructions = findInstructions.map((instruction, index) => (
+      const sortedIngredients = findIngredients.sort((a, b) => a.id - b.id)  
+
+    const sortedInstructions = findInstructions.sort((a, b) => a.id - b.id);
+
+
+    const getInstructions = sortedInstructions.map((instruction, index) => (
       <InstructionEditBlock
         key={index}
         id={instruction.id}
@@ -59,7 +64,7 @@ export default class Recipe extends Component {
       />
     ));
 
-    const getIngredients = findIngredients.map((ingredient, index) => (
+    const getIngredients = sortedIngredients.map((ingredient, index) => (
       <IngredientEditBlock
         key={index}
         id={ingredient.id}
