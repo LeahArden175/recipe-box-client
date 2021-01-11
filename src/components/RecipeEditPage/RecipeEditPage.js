@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import moment from "moment";
 import { Link } from "react-router-dom";
-import InstructionBlock from "../InstructionBlock/InstructionBlock";
-import IngredientBlock from "../IngredientBlock/IngredientBlock";
+import InstructionEditBlock from "../InstructionEditBlock/InstructionEditBlock";
+import IngredientEditBlock from "../IngredientEditBlock/IngredientEditBlock";
 import RecipeTags from "../RecipeTags/RecipeTags";
-import "./Recipe.css";
+import "./RecipeEditPage.css";
 
 export default class Recipe extends Component {
   state = {
@@ -50,7 +50,7 @@ export default class Recipe extends Component {
       ingredients.filter((ingredient) => ingredient.recipe_id == id);
 
     const getInstructions = findInstructions.map((instruction, index) => (
-      <InstructionBlock
+      <InstructionEditBlock
         key={index}
         id={instruction.id}
         recipe_id={instruction.recipe_id}
@@ -60,7 +60,7 @@ export default class Recipe extends Component {
     ));
 
     const getIngredients = findIngredients.map((ingredient, index) => (
-      <IngredientBlock
+      <IngredientEditBlock
         key={index}
         id={ingredient.id}
         food_item={ingredient.food_item}

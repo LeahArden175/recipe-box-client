@@ -1,11 +1,11 @@
-import React, { Component } from "react";
-import RecipePage from "../../components/RecipePage/RecipePage";
+import React, { Component } from 'react';
+import RecipeEditPage from '../../components/RecipeEditPage/RecipeEditPage'
 import config from "../../config";
 import TokenService from "../../services/token-services";
 import InstructionsService from "../../services/instructions-service";
 import IngredientsService from "../../services/ingredients-services";
 
-export default class RecipeRoute extends Component {
+export default class EditRecipeRoute extends Component {
   state = {
     recipes: [],
     instructions: [],
@@ -62,7 +62,7 @@ export default class RecipeRoute extends Component {
     const ingredients = this.state.ingredients;
     return (
       <section className="recipe-section">
-        <RecipePage
+        <RecipeEditPage
           instructions={instructions}
           recipeId={recipeId}
           history={history}
