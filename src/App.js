@@ -1,4 +1,5 @@
 import "./App.css";
+import { Component } from "react";
 import { Route, Switch } from "react-router-dom";
 import AddRecipeRoute from "./routes/AddRecipe/AddRecipeRoute";
 import NotFoundRoute from "./routes/NotFoundRoute/NotFoundRoute";
@@ -12,10 +13,29 @@ import TestRecipeRoute from './routes/TestRecipeRoute/TestRecipeRoute'
 import EditIngredientRoute from './routes/EditIngredientRoute/EditIngredientRoute'
 import EditInstructionRoute from './routes/EditInstructionRoute/EditInstructionRoute'
 import EditTitleRoute from './routes/EditTitleRoute/EditTitleRoute'
+import Context from './Context'
 
 
-function App() {
+export default class App extends Component {
+
+  state = {
+    loggedIn: false
+  }
+
+  handleLoggedIn = (loggedIn) => {
+    this.setState({
+      loggedIn
+    })
+  }
+
+  render() {
+    const value = {
+      loggedIn : this.state.loggedIn,
+      handleLoggedIn : this.handleLoggedIn
+    }
+    console.log(this.state.loggedIn)
   return (
+    <Context.Provider value={value}>
     <div className="App">
       <Header />
       <main>
@@ -33,7 +53,7 @@ function App() {
         </Switch>
       </main>
     </div>
+    </Context.Provider>
   );
+  }
 }
-
-export default App;
