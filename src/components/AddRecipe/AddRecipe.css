@@ -1,4 +1,88 @@
-.add-new-form{
+.add-new-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  padding: 20px;
+  margin: 20px;
+  margin-top: 20px;
+  border-radius: 15px;
+  text-align: left;
+}
+.add-inputs {
+  margin-left: 10px;
+}
+.title-add-div{
+    display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin-top: 20px;
+  padding-bottom: 20px;
+  border-bottom: solid;
+  text-align: left;
+}
+.ingredients-form{
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    /* text-align: center; */
+    text-align: left;
+}
+.ingredients-form-divide{
+    border: solid;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+.labels{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.select{
+    display: flex;
+    justify-content: space-between;
+    width: 52%;
+}
+.instructions-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: left;
+    margin-top: 20px;
+    border-top: solid;
+}
+.tags-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: left;
+    margin-top: 20px;
+    border-top: solid;
+}
+
+button{
+    box-shadow: inset 0px 0px 14px -3px #b5b8ae;
+    background: linear-gradient(to bottom, #681b1b 5%, #300707 100%);
+    background-color: #3c3d41;
+    border-radius: 6px;
+    border: 1px solid #b8b0ad;
+    display: inline-block;
+    cursor: pointer;
+    color: #f2d0d0;
+    font-size: 15px;
+    font-weight: bold;
+    margin: 20px;
+    height: 35px;
+    padding: 10px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #0b0b0c;
+    font-weight: bold;
+    font-family: 'Fraunces', serif;
+}
+
+.text-area{
+    font-family: 'Fraunces', serif;
+    min-height: 5em;
+	max-height: 50vh;
 }

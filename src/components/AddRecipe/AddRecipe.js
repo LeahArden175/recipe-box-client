@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import config from "../../config";
 import TokenService from "../../services/token-services";
-import TagsService from '../../services/tags-service'
+import TagsService from "../../services/tags-service";
 import "./AddRecipe.css";
 
 export default class AddRecipe extends Component {
@@ -23,10 +23,10 @@ export default class AddRecipe extends Component {
     ],
     tags: [
       {
-        tag_id: '',
-      }
+        tag_id: "",
+      },
     ],
-    allTags : []
+    allTags: [],
   };
 
   handleSubmit = (event) => {
@@ -52,7 +52,7 @@ export default class AddRecipe extends Component {
         const recipe_id = this.state.recipe_id;
 
         newIngredients.map((ingredient) => {
-          ingredient = {...ingredient, recipe_id };
+          ingredient = { ...ingredient, recipe_id };
           console.log(ingredient);
           fetch(`${config.API_ENDPOINT}/ingredients`, {
             method: "POST",
@@ -61,50 +61,55 @@ export default class AddRecipe extends Component {
               authorization: `bearer ${TokenService.getAuthToken()}`,
             },
             body: JSON.stringify(ingredient),
-          }).then((res) =>
-            !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json()
-          )
-          .then(() => {
-            const newInstructions = this.state.instructions;
-            const recipe_id = this.state.recipe_id
-
-            newInstructions.map((instruction) => {
-              instruction = {recipe_id, ...instruction}
-              console.log(instruction)
-              fetch(`${config.API_ENDPOINT}/instructions`, {
-                method: 'POST',
-                headers: {
-                  'content-type': 'application/json',
-                  authorization: `bearer ${TokenService.getAuthToken()}`
-                },
-                body: JSON.stringify(instruction)
-              }).then((res) =>
+          })
+            .then((res) =>
               !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json()
             )
-            })
-          })
-          .then(() => {
-            const newTags = this.state.tags
-            const recipe_id = this.state.recipe_id
+            .then(() => {
+              const newInstructions = this.state.instructions;
+              const recipe_id = this.state.recipe_id;
 
-            newTags.map((tag) => {
-              tag = {recipe_id, ...tag}
-              console.log(tag)
-              fetch(`${config.API_ENDPOINT}/recipe_tags`, {
-                method: 'POST',
-                headers: {
-                  'content-type': 'application/json',
-                  authorization: `bearer ${TokenService.getAuthToken()}`
-                },
-                body: JSON.stringify(tag)
-              }).then((res) =>
-              !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json()
-            )
+              newInstructions.map((instruction) => {
+                instruction = { recipe_id, ...instruction };
+                console.log(instruction);
+                fetch(`${config.API_ENDPOINT}/instructions`, {
+                  method: "POST",
+                  headers: {
+                    "content-type": "application/json",
+                    authorization: `bearer ${TokenService.getAuthToken()}`,
+                  },
+                  body: JSON.stringify(instruction),
+                }).then((res) =>
+                  !res.ok
+                    ? res.json().then((e) => Promise.reject(e))
+                    : res.json()
+                );
+              });
             })
-          })
-          .then(() => {
-            this.props.history.push(`/recipe/${this.state.recipe_id}`);
-          });
+            .then(() => {
+              const newTags = this.state.tags;
+              const recipe_id = this.state.recipe_id;
+
+              newTags.map((tag) => {
+                tag = { recipe_id, ...tag };
+                console.log(tag);
+                fetch(`${config.API_ENDPOINT}/recipe_tags`, {
+                  method: "POST",
+                  headers: {
+                    "content-type": "application/json",
+                    authorization: `bearer ${TokenService.getAuthToken()}`,
+                  },
+                  body: JSON.stringify(tag),
+                }).then((res) =>
+                  !res.ok
+                    ? res.json().then((e) => Promise.reject(e))
+                    : res.json()
+                );
+              });
+            })
+            .then(() => {
+              this.props.history.push(`/recipe/${this.state.recipe_id}`);
+            });
         });
       });
   };
@@ -137,56 +142,63 @@ export default class AddRecipe extends Component {
   };
 
   updateTags = (e, index) => {
-    const newTags = [...this.state.tags]
+    const newTags = [...this.state.tags];
     newTags[index] = {
       ...newTags[index],
       [e.target.name]: e.target.id,
-    }
-    this.setState({tags: newTags})
-  }
+    };
+    this.setState({ tags: newTags });
+  };
 
   componentDidMount = () => {
-    TagsService.getTags()
-      .then((allTags) => {
-        this.setState({allTags})
-      })
-  }
+    TagsService.getTags().then((allTags) => {
+      this.setState({ allTags });
+    });
+  };
 
   render() {
     console.log(this.state);
     return (
       <form onSubmit={this.handleSubmit} className="add-new-form">
-        <label htmlFor="title">
-          Title:
-          <input
-            type="text"
-            placeholder="title"
-            value={this.state.title}
-            onChange={(e) => this.titleChanged(e.target.value)}
-          />
-        </label>
+        <div className="title-add-div">
+          <h2>Title</h2>
+          <label htmlFor="title" className="labels">
+            Title:
+            <input
+              className="add-inputs"
+              type="text"
+              placeholder="title"
+              value={this.state.title}
+              onChange={(e) => this.titleChanged(e.target.value)}
+            />
+          </label>
+        </div>
+        <div className="ingredients-form">
         <h2>Ingredients</h2>
         {this.state.ingredients.map((ingredient, index) => (
-          <div>
-            <label htmlFor="amount">
+          <div className="ingredients-form-divide">
+            <label htmlFor="amount" className="labels">
               Amount:
               <input
+                className="add-inputs"
                 type="number"
                 placeholder="amount"
                 name="amount"
                 id="amount"
-                // value={ingredient.amount}
                 onChange={(e) => this.updateIngredient(e, index)}
               />
             </label>
-            <label htmlFor="units">
+            <label htmlFor="units" className="labels">
               Unit:
               <select
                 name="unit"
                 id="unit"
                 onChange={(e) => this.updateIngredient(e, index)}
+                className="select"
               >
-                <option  selected disabled='disabled'>Choose Unit</option>
+                <option selected disabled="disabled">
+                  Choose Unit
+                </option>
                 <option name="tbs" value="tbs">
                   tbs
                 </option>
@@ -225,9 +237,10 @@ export default class AddRecipe extends Component {
                 </option>
               </select>
             </label>
-            <label htmlFor="ingredient">
+            <label htmlFor="ingredient" className="labels">
               Ingredient:
               <input
+                className="add-inputs"
                 name="food_item"
                 type="text"
                 placeholder="ingredient"
@@ -236,18 +249,20 @@ export default class AddRecipe extends Component {
             </label>
           </div>
         ))}
+        </div>
         <button
           type="button"
           onClick={() =>
             this.setState({ ingredients: [...this.state.ingredients, ""] })
           }
         >
-          Add Ingredient
+          Add Another Ingredient
         </button>
+        <div className='instructions-form'>
         <h2>Instructions</h2>
         {this.state.instructions.map((instruction, index) => (
-          <div>
-            <label>
+          <div className="ingredients-form-divide">
+            <label className="labels">
               Step Number
               <input
                 type="text"
@@ -257,9 +272,10 @@ export default class AddRecipe extends Component {
                 onChange={(e) => this.updateInstruction(e, index)}
               />
             </label>
-            <label>
+            <label className="labels">
               Instruction
-              <input
+              <textarea
+                className='text-area'
                 type="text"
                 placeholder="instruction"
                 name="step_info"
@@ -269,21 +285,29 @@ export default class AddRecipe extends Component {
             </label>
           </div>
         ))}
+        </div>
         <button
           type="button"
           onClick={() =>
             this.setState({ instructions: [...this.state.instructions, ""] })
           }
         >
-          Add Ingredient
+          Add Another Instruction
         </button>
+        <div className='tags-form'>
         <h2>Tags</h2>
         {this.state.allTags.map((tag, index) => (
           <div>
-            <input type='checkbox' id={tag.id} name='tag_id' onChange={(e) => this.updateTags(e, index)}/>
+            <input
+              type="checkbox"
+              id={tag.id}
+              name="tag_id"
+              onChange={(e) => this.updateTags(e, index)}
+            />
             <label>{tag.tag_name}</label>
           </div>
         ))}
+        </div>
         <button type="submit">Submit</button>
       </form>
     );
