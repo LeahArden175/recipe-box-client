@@ -50,10 +50,6 @@ export default class Recipe extends Component {
       return "loading";
     }
 
-    const formattedDate = moment
-      .utc(findRecipe.date_created)
-      .format("MMM Do YYYY");
-
     return (
       <div className="recipe-page-div">
         <p className='edit-message'>Choose which item you would like to edit</p>
@@ -66,7 +62,6 @@ export default class Recipe extends Component {
             Edit
           </Link>
           </div>
-        <p className='date'>Created: {formattedDate}</p>
         <div className="ingredients-div">
           <ul className="ingredients-list">{getIngredients}</ul>
         </div>

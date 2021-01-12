@@ -101,7 +101,9 @@ export default class RecipePage extends Component {
             Delete recipe
           </button>
         </div>
+        <div className='recipe-tags-div'>
         <RecipeTags id={this.props.recipeId} />
+        </div>
       </div>
     );
   }
