@@ -76,9 +76,9 @@ export default class AddRecipe extends Component {
             )
             })
           })
-          // .then((recipe) => {
-          //   this.props.history.push(`/recipe/${recipe.id}`);
-          // });
+          .then(() => {
+            this.props.history.push(`/recipe/${this.state.recipe_id}`);
+          });
         });
       });
   };

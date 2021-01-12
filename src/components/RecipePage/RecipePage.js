@@ -13,7 +13,7 @@ export default class RecipePage extends Component {
   handleDeleteRecipe = (event) => {
     event.preventDefault();
     const recipeId = this.props.recipeId
-    fetch(`${config.API_ENDPOINT}/recipe/${recipeId}`, {
+    fetch(`${config.API_ENDPOINT}/recipes/${recipeId}`, {
       method: 'DELETE',
       headers: {
         authorization: `bearer ${TokenService.getAuthToken()}`,
