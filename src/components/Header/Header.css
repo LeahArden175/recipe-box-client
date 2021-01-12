@@ -1,7 +1,14 @@
 .Header__logged-in{
     display: flex;
     justify-content: space-between;
-    
+    border-bottom: 4px solid rgb(101, 31, 31);
+    background-color: rgb(196, 135, 135);
+}
+.Header__not-logged-in{
+    display: flex;
+    justify-content: center;
+    border-bottom: 4px solid rgb(101, 31, 31);
+    background-color: rgb(196, 135, 135);
 }
 .link{
     text-decoration: none;
@@ -12,15 +19,16 @@
 }
 .header-div{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     border-top: 4px solid rgb(101, 31, 31);
     border-bottom: 4px solid rgb(101, 31, 31);
     background-color: rgb(196, 135, 135);
 }
 .header{
     color: rgb(57, 2, 2);
-    font-size: 27px;
+    font-size: px;
     margin-top: 20px;
     font-family: 'Fraunces', serif;
     font-weight: bold;
+    text-align: center;
 }

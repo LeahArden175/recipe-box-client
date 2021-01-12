@@ -50,16 +50,27 @@ export default class EditInstruction extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <label htmlFor="instruction">Instruction to edit:</label>
-        <input
+      <form onSubmit={this.handleSubmit} className="editing-forms">
+        <label htmlFor="instruction" className="editing-labels">Instruction:</label>
+        <textarea
           key={this.state.id}
           type="text"
           name="instruction_info"
           value={this.state.step_info}
           onChange={(e) => this.setStepInfo(e.target.value)}
+          className='instructions-inputs'
         />
-        <button type="submit">Submit</button>
+        <div className="button-div">
+        <button className="editing-buttons" type="submit">Submit</button>
+        <button
+            className="editing-buttons"
+            onClick={(e) =>
+              this.props.history.push(`/edit-recipe/${this.state.recipeId}`)
+            }
+          >
+            Cancel
+          </button>
+          </div>
       </form>
     );
   }

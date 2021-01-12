@@ -62,29 +62,45 @@ export default class EditIngredient extends Component {
   render() {
     console.log(this.state);
     return (
-      <form onSubmit={this.handleSubmit}>
-          <label htmlFor="amount">Amount:</label>
+      <form onSubmit={this.handleSubmit} className="editing-forms">
+          <label htmlFor="amount" className="editing-labels">Amount:</label>
           <input 
             type='text'
             name='amount'
             value={this.state.amount}
             onChange={(e) => this.setAmount(e.target.value)}
+            className='ingredients-inputs'
           />
-          <label htmlFor='unit'>Unit:</label>
+          
+          <label htmlFor='unit' className="editing-labels">Unit:</label>
           <input
             type='text'
             name='unit'
             value={this.state.unit}
             onChange={(e) => this.setUnit(e.target.value)}
+            className='ingredients-inputs'
           />
-          <label htmlFor='food_item'>Food:</label>
+          
+          <label htmlFor='food_item' className="editing-labels">Food:</label>
           <input
             type='text'
             name='food_item'
             value={this.state.food_item}
             onChange={(e) => this.setFoodItem(e.target.value)}
+            className='ingredients-inputs'
           />
-          <button type='submit' >Submit</button>
+        
+          <div className="button-div">
+          <button className="editing-buttons" type='submit' >Submit</button>
+          <button
+            className="editing-buttons"
+            onClick={(e) =>
+              this.props.history.push(`/edit-recipe/${this.state.recipeId}`)
+            }
+          >
+            Cancel
+          </button>
+          </div>
       </form>
     );
   }

@@ -37,37 +37,10 @@ export default class Header extends Component {
     }
   }
 
-  renderLogoutLink() {
-    return (
-      <div>
-          <div className="Header__logged-in">
-            <Link to="/recipe-list" className="link">
-              Your Recipes!
-            </Link>
-            <Link onClick={this.handleLogoutClick} to="/" className="link">
-              Logout
-            </Link>
-          </div>
-          <h1 className="header">Recipe Box</h1>
-        </div>
-    )
-  }
-
-  renderHeader() {
-    return (
-      <div className="Header__not-logged-in">
-          <h1 className="header">Welcome to Recipe Box</h1>
-        </div>
-    )
-  }
 
   render() {
     return (
       <div>
-        {/* {TokenService.hasAuthToken()
-        ? this.renderLogoutLink()
-          : this.renderHeader()
-        } */}
         {this.renderHeaderLinks()}
       </div>
     );

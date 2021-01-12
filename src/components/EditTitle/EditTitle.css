@@ -1,0 +1,50 @@
+.editing-forms{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    flex-direction: column;
+    font-family: 'Fraunces', serif;
+    font-weight: bold;
+}
+.editing-labels{
+    margin-right: 15px;
+    font-size: 20px;
+}
+.title-input{
+    height: 30px;
+    margin: 10px;
+}
+.editing-buttons{
+    box-shadow: inset 0px 0px 14px -3px #b5b8ae;
+    background: linear-gradient(to bottom, #681b1b 5%, #300707 100%);
+    background-color: #3c3d41;
+    border-radius: 6px;
+    border: 1px solid #b8b0ad;
+    display: inline-block;
+    cursor: pointer;
+    color: #f2d0d0;
+    font-size: 15px;
+    font-weight: bold;
+    margin: 20px;
+    height: 35px;
+    padding: 10px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #0b0b0c;
+    font-weight: bold;
+    font-family: 'Fraunces', serif;
+}
+.button-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.ingredients-inputs{
+    margin: 5px 10px;
+}
+.instructions-inputs{
+    height: 200px;
+    width: 200px;
+    margin-top: 20px;
+    font-family: 'Fraunces', serif;
+}
