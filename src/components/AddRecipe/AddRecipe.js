@@ -6,6 +6,7 @@ import "./AddRecipe.css";
 export default class AddRecipe extends Component {
   state = {
     title: "",
+    recipe_id: "",
     ingredients: [
       {
         unit: "",
@@ -17,6 +18,7 @@ export default class AddRecipe extends Component {
       {
         list_order: "",
         step_info: "",
+        recipe_id: '',
       },
     ],
   };
@@ -36,14 +38,45 @@ export default class AddRecipe extends Component {
       .then((res) =>
         !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json()
       )
-      .then((recipe) => {
-        this.props.history.push(`/recipe/${recipe.id}`);
-      });
-  };
+      .then((res) => {
+        this.setRecipeId(res.id)
+      })
+      .then(() => {
+        const newIngredients = this.state.ingredients
+        const recipe_id = this.state.recipe_id
+
+        newIngredients.map((ingredient) => {
+         ingredient = {recipe_id, ...ingredient}
+        console.log(ingredient)
+          fetch(`${config.API_ENDPOINT}/ingredients`, {
+            method: 'POST',
+            headers : {
+              'content-type': 'application/json',
+              authorization: `bearer ${TokenService.getAuthToken()}`
+            },
+            body: JSON.stringify(ingredient)
+          })
+          .then((res) =>
+        !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json()
+      )
+          .then((res) => {
+            console.log(res, 'res')
+          }) 
+        })
+        // .then((recipe) => {
+        //   this.props.history.push(`/recipe/${recipe.id}`);
+        // });
+      })
+    }
+
 
   titleChanged = (title) => {
     this.setState({ title });
     console.log(this.state);
+  };
+
+  setRecipeId = (recipe_id) => {
+    this.setState({ recipe_id });
   };
 
   updateIngredient = (e, index) => {
@@ -83,7 +116,7 @@ export default class AddRecipe extends Component {
             <label htmlFor="amount">
               Amount:
               <input
-                type="text"
+                type="number"
                 placeholder="amount"
                 name="amount"
                 id="amount"
