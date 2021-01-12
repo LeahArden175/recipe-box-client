@@ -18,7 +18,6 @@ export default class AddRecipe extends Component {
       {
         list_order: "",
         step_info: "",
-        recipe_id: '',
       },
     ],
   };
@@ -39,36 +38,50 @@ export default class AddRecipe extends Component {
         !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json()
       )
       .then((res) => {
-        this.setRecipeId(res.id)
+        this.setRecipeId(res.id);
       })
       .then(() => {
-        const newIngredients = this.state.ingredients
-        const recipe_id = this.state.recipe_id
+        const newIngredients = this.state.ingredients;
+        const recipe_id = this.state.recipe_id;
 
         newIngredients.map((ingredient) => {
-         ingredient = {recipe_id, ...ingredient}
-        console.log(ingredient)
+          ingredient = { recipe_id, ...ingredient };
+          // console.log(ingredient);
           fetch(`${config.API_ENDPOINT}/ingredients`, {
-            method: 'POST',
-            headers : {
-              'content-type': 'application/json',
-              authorization: `bearer ${TokenService.getAuthToken()}`
+            method: "POST",
+            headers: {
+              "content-type": "application/json",
+              authorization: `bearer ${TokenService.getAuthToken()}`,
             },
-            body: JSON.stringify(ingredient)
-          })
-          .then((res) =>
-        !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json()
-      )
-          .then((res) => {
-            console.log(res, 'res')
-          }) 
-        })
-        // .then((recipe) => {
-        //   this.props.history.push(`/recipe/${recipe.id}`);
-        // });
-      })
-    }
+            body: JSON.stringify(ingredient),
+          }).then((res) =>
+            !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json()
+          )
+          .then(() => {
+            const newInstructions = this.state.instructions;
+            const recipe_id = this.state.recipe_id
 
+            newInstructions.map((instruction) => {
+              instruction = {recipe_id, ...instruction}
+              console.log(instruction)
+              fetch(`${config.API_ENDPOINT}/instructions`, {
+                method: 'POST',
+                headers: {
+                  'content-type': 'application/json',
+                  authorization: `bearer ${TokenService.getAuthToken()}`
+                },
+                body: JSON.stringify(instruction)
+              }).then((res) =>
+              !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json()
+            )
+            })
+          })
+          // .then((recipe) => {
+          //   this.props.history.push(`/recipe/${recipe.id}`);
+          // });
+        });
+      });
+  };
 
   titleChanged = (title) => {
     this.setState({ title });
