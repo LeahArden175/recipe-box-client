@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import config from "../../config";
 import TokenService from "../../services/token-services";
+import TagsService from '../../services/tags-service'
 import "./AddRecipe.css";
 
 export default class AddRecipe extends Component {
@@ -20,6 +21,12 @@ export default class AddRecipe extends Component {
         step_info: "",
       },
     ],
+    tags: [
+      {
+        tag_id: '',
+      }
+    ],
+    allTags : []
   };
 
   handleSubmit = (event) => {
@@ -45,8 +52,8 @@ export default class AddRecipe extends Component {
         const recipe_id = this.state.recipe_id;
 
         newIngredients.map((ingredient) => {
-          ingredient = { recipe_id, ...ingredient };
-          // console.log(ingredient);
+          ingredient = {...ingredient, recipe_id };
+          console.log(ingredient);
           fetch(`${config.API_ENDPOINT}/ingredients`, {
             method: "POST",
             headers: {
@@ -71,6 +78,25 @@ export default class AddRecipe extends Component {
                   authorization: `bearer ${TokenService.getAuthToken()}`
                 },
                 body: JSON.stringify(instruction)
+              }).then((res) =>
+              !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json()
+            )
+            })
+          })
+          .then(() => {
+            const newTags = this.state.tags
+            const recipe_id = this.state.recipe_id
+
+            newTags.map((tag) => {
+              tag = {recipe_id, ...tag}
+              console.log(tag)
+              fetch(`${config.API_ENDPOINT}/recipe_tags`, {
+                method: 'POST',
+                headers: {
+                  'content-type': 'application/json',
+                  authorization: `bearer ${TokenService.getAuthToken()}`
+                },
+                body: JSON.stringify(tag)
               }).then((res) =>
               !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json()
             )
@@ -110,6 +136,22 @@ export default class AddRecipe extends Component {
     this.setState({ instructions: newInstructions });
   };
 
+  updateTags = (e, index) => {
+    const newTags = [...this.state.tags]
+    newTags[index] = {
+      ...newTags[index],
+      [e.target.name]: e.target.id,
+    }
+    this.setState({tags: newTags})
+  }
+
+  componentDidMount = () => {
+    TagsService.getTags()
+      .then((allTags) => {
+        this.setState({allTags})
+      })
+  }
+
   render() {
     console.log(this.state);
     return (
@@ -144,6 +186,7 @@ export default class AddRecipe extends Component {
                 id="unit"
                 onChange={(e) => this.updateIngredient(e, index)}
               >
+                <option  selected disabled='disabled'>Choose Unit</option>
                 <option name="tbs" value="tbs">
                   tbs
                 </option>
@@ -234,6 +277,13 @@ export default class AddRecipe extends Component {
         >
           Add Ingredient
         </button>
+        <h2>Tags</h2>
+        {this.state.allTags.map((tag, index) => (
+          <div>
+            <input type='checkbox' id={tag.id} name='tag_id' onChange={(e) => this.updateTags(e, index)}/>
+            <label>{tag.tag_name}</label>
+          </div>
+        ))}
         <button type="submit">Submit</button>
       </form>
     );

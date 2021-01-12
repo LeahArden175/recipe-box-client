@@ -23,9 +23,13 @@ export default class RecipePage extends Component {
     .then((res) => {
       if (!res.ok) return res.json().then((event = Promise.reject(event)));
     })
+    .then(() => {
+      this.props.history.push(`/recipe-list`);
+    });
   }
 
   render() {
+    console.log(this.props)
     const recipes = this.props.recipes;
     const instructions = this.props.instructions;
     const ingredients = this.props.ingredients;
@@ -88,7 +92,7 @@ export default class RecipePage extends Component {
         <div className="ingredients-div">
           <ul className="ingredients-list">{getIngredients}</ul>
         </div>
-        <p className="ingredient-instruction-title">Ingredients:</p>
+        <p className="ingredient-instruction-title">Instructions:</p>
         <div className="instructions-div">
           <ol className="instructions-list">{getInstructions}</ol>
         </div>
