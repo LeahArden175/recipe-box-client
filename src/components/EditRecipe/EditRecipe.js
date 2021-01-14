@@ -51,22 +51,10 @@ export default class EditRecipe extends Component {
     const recipeToSubmit = {
       title: e.target["recipe-title"].value,
     };
-    //figure out which insrtictions need to be updated
-    //each instructions input element should have a className of "instruction_step"
-    //loop through all input elements that have this className
-    //for each input element compare the current info with the prev info
-    //for each changed instruction add an object of instruction_id and info to an array (changedInstructions)
-    //get id from either the input name or the data-attribute
-    //figure out which ingreiednts need to be updated
-    //repeat same but for ingredients
-    //now there are 2 arrays that need to be PATCHED on the backend
-    //for each instruction in the changedInstructions array do a fetch
-    //do same for ingredients
     const instructionsToSubmit = {
       step_info: e.target["step_info"].value,
     };
     const id = this.props.currentRecipeId;
-    console.log(instructionsToSubmit.id);
     fetch(`${config.API_ENDPOINT}/recipes/${id}`, {
       method: "PATCH",
       headers: {
@@ -96,7 +84,6 @@ export default class EditRecipe extends Component {
   };
 
   render() {
-    console.log(this.state);
     return (
       <div>
         <form onSubmit={this.handleSubmit}>

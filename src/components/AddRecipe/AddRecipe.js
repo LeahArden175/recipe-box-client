@@ -32,7 +32,6 @@ export default class AddRecipe extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
     let newRecipe = { title: this.state.title };
-    console.log(newRecipe);
     fetch(`${config.API_ENDPOINT}/recipes`, {
       method: "POST",
       headers: {
@@ -53,7 +52,6 @@ export default class AddRecipe extends Component {
 
         newIngredients.map((ingredient) => {
           ingredient = { ...ingredient, recipe_id };
-          console.log(ingredient);
           fetch(`${config.API_ENDPOINT}/ingredients`, {
             method: "POST",
             headers: {
@@ -71,7 +69,6 @@ export default class AddRecipe extends Component {
 
               newInstructions.map((instruction) => {
                 instruction = { recipe_id, ...instruction };
-                console.log(instruction);
                 fetch(`${config.API_ENDPOINT}/instructions`, {
                   method: "POST",
                   headers: {
@@ -92,7 +89,6 @@ export default class AddRecipe extends Component {
 
               newTags.map((tag) => {
                 tag = { recipe_id, ...tag };
-                console.log(tag);
                 fetch(`${config.API_ENDPOINT}/recipe_tags`, {
                   method: "POST",
                   headers: {
@@ -116,7 +112,6 @@ export default class AddRecipe extends Component {
 
   titleChanged = (title) => {
     this.setState({ title });
-    console.log(this.state);
   };
 
   setRecipeId = (recipe_id) => {
@@ -157,7 +152,6 @@ export default class AddRecipe extends Component {
   };
 
   render() {
-    console.log(this.state);
     return (
       <form onSubmit={this.handleSubmit} className="add-new-form">
         <div className="title-add-div">

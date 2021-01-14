@@ -60,7 +60,6 @@ export default class EditIngredient extends Component {
   };
 
   render() {
-    console.log(this.state);
     return (
       <form onSubmit={this.handleSubmit} className="editing-forms">
           <label htmlFor="amount" className="editing-labels">Amount:</label>

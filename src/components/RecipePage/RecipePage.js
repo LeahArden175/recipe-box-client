@@ -29,7 +29,6 @@ export default class RecipePage extends Component {
   }
 
   render() {
-    console.log(this.props)
     const recipes = this.props.recipes;
     const instructions = this.props.instructions;
     const ingredients = this.props.ingredients;

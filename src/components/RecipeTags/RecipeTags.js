@@ -44,7 +44,6 @@ export default class RecipeTags extends Component {
 
 
   render() {
-    console.log(this.state)
     return (
       <div className='tag-div'>
         {this.renderTags()}

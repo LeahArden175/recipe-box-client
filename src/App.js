@@ -34,7 +34,6 @@ export default class App extends Component {
       loggedIn : this.state.loggedIn,
       handleLoggedIn : this.handleLoggedIn
     }
-    console.log(this.state.loggedIn)
   return (
     <Context.Provider value={value}>
     <div className="App">

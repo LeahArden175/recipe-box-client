@@ -30,7 +30,6 @@ export default class EditTitle extends Component {
     event.preventDefault();
     const id = this.state.id;
     const updatedTitle = this.state;
-    console.log(updatedTitle);
     fetch(`${config.API_ENDPOINT}/recipes/${id}`, {
       method: "PATCH",
       headers: {
@@ -48,7 +47,6 @@ export default class EditTitle extends Component {
   };
 
   render() {
-    console.log(this.state);
     return (
       <form onSubmit={this.handleSubmit} className="editing-forms">
         <label htmlFor="title" className="editing-labels">

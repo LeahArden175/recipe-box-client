@@ -43,8 +43,6 @@ export default class EditRecipeRoute extends Component {
 
   componentDidMount() {
     this.getAll();
-    // this.getInstructions();
-    // this.getIngredients();
   }
 
   render() {
@@ -53,12 +51,10 @@ export default class EditRecipeRoute extends Component {
     const instructions = this.state.instructions;
     const ingredients = this.state.ingredients;
     const history = this.props.history
-    //const currentRecipe = recipes && recipes.find((recipe) => recipe.id == currentEditId)
 
     return (
       <div>
         <EditInstruction
-        //currentRecipe={currentRecipe}
           currentEditId={currentEditId}
           instructions={instructions}
           ingredients={ingredients}

@@ -24,7 +24,6 @@ export default class RecipeListRoute extends Component {
       )
       .then((res) => {
         const sorted = res.sort((a, b) => a.id - b.id);
-        console.log(sorted);
         this.setRecipes(sorted);
       });
   }

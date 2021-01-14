@@ -31,7 +31,6 @@ export default class EditInstruction extends Component {
 
   setStepInfo = (step_info) => {
     this.setState({ step_info });
-    console.log(this.state);
   };
 
   componentDidMount = () => {
