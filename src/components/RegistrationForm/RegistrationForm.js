@@ -36,9 +36,13 @@ export default class RegistrationForm extends Component {
     .catch(res => {
       this.setState({ error: res.error})
     })
+    .then(() => {
+      this.props.history.push('/')
+    })
   }
 
   render() {
+    console.log(this.props)
     return (
       <div>
         <form 
