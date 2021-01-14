@@ -23,17 +23,31 @@ export default class RecipeTags extends Component {
     this.getTagsForRecipes()
   }
 
-
-  render() {
-    console.log(this.state)
-    return (
-      <div className='tag-div'>
+  renderTags = () => {
+    if(this.state.tags.length < 1){
+      return (
+        <p>This recipe has no tags!</p>
+      )
+    } else {
+      return (
+        <div className='tag-div'>
         <h5 className='tag-h5'>Tags:</h5>
         <div className='recipe-tag-div'>
         {this.state.tags.map((tag) => (
           <p className='tag-p' key={tag.id}>{tag.tag_name}</p>
         ))}
         </div>
+      </div>
+      )
+    }
+  }
+
+
+  render() {
+    console.log(this.state)
+    return (
+      <div className='tag-div'>
+        {this.renderTags()}
       </div>
     );
   }

@@ -165,6 +165,7 @@ export default class AddRecipe extends Component {
           <label htmlFor="title" className="labels">
             Title:
             <input
+              required
               className="add-inputs"
               type="text"
               placeholder="title"
@@ -174,81 +175,87 @@ export default class AddRecipe extends Component {
           </label>
         </div>
         <div className="ingredients-form">
-        <h2>Ingredients</h2>
-        {this.state.ingredients.map((ingredient, index) => (
-          <div className="ingredients-form-divide">
-            <label htmlFor="amount" className="labels">
-              Amount:
-              <input
-                className="add-inputs"
-                type="number"
-                placeholder="amount"
-                name="amount"
-                id="amount"
-                onChange={(e) => this.updateIngredient(e, index)}
-              />
-            </label>
-            <label htmlFor="units" className="labels">
-              Unit:
-              <select
-                name="unit"
-                id="unit"
-                onChange={(e) => this.updateIngredient(e, index)}
-                className="select"
-              >
-                <option selected disabled="disabled">
-                  Choose Unit
-                </option>
-                <option name="tbs" value="tbs">
-                  tbs
-                </option>
-                <option name="tsp" value="tsp">
-                  tsp
-                </option>
-                <option name="cup" value="cup">
-                  cup
-                </option>
-                <option name="cups" value="cups">
-                  cups
-                </option>
-                <option name="quart" value="quart">
-                  quart
-                </option>
-                <option name="quarts" value="quarts">
-                  quarts
-                </option>
-                <option name="lb" value="lb">
-                  lb
-                </option>
-                <option name="lbs" value="lbs">
-                  lbs
-                </option>
-                <option name="oz" value="oz">
-                  oz
-                </option>
-                <option name="ml" value="ml">
-                  ml
-                </option>
-                <option name="gram" value="gram">
-                  gram
-                </option>
-                <option name="grams" value="grams">
-                  grams
-                </option>
-              </select>
-            </label>
-            <label htmlFor="ingredient" className="labels">
-              Ingredient:
-              <input
-                className="add-inputs"
-                name="food_item"
-                type="text"
-                placeholder="ingredient"
-                onChange={(e) => this.updateIngredient(e, index)}
-              />
-            </label>
-          </div>
-        ))}
+          <h2>Ingredients</h2>
+          {this.state.ingredients.map((ingredient, index) => (
+            <div
+              className="ingredients-form-divide"
+              key={this.state.ingredients[index]}
+            >
+              <label htmlFor="amount" className="labels">
+                Amount:
+                <input
+                  required
+                  className="add-inputs"
+                  type="number"
+                  placeholder="amount"
+                  name="amount"
+                  id="amount"
+                  onChange={(e) => this.updateIngredient(e, index)}
+                />
+              </label>
+              <label htmlFor="units" className="labels">
+                Unit:
+                <select
+                  required
+                  name="unit"
+                  id="unit"
+                  onChange={(e) => this.updateIngredient(e, index)}
+                  className="select"
+                >
+                  <option hidden={true} value="Choose Unit">
+                    Choose Unit
+                  </option>
+                  <option name="tbs" value="tbs">
+                    tbs
+                  </option>
+                  <option name="tsp" value="tsp">
+                    tsp
+                  </option>
+                  <option name="cup" value="cup">
+                    cup
+                  </option>
+                  <option  name="cups" value="cups">
+                    cups
+                  </option>
+                  <option name="quart" value="quart">
+                    quart
+                  </option>
+                  <option name="quarts" value="quarts">
+                    quarts
+                  </option>
+                  <option  name="lb" value="lb">
+                    lb
+                  </option>
+                  <option name="lbs" value="lbs">
+                    lbs
+                  </option>
+                  <option  name="oz" value="oz">
+                    oz
+                  </option>
+                  <option  name="ml" value="ml">
+                    ml
+                  </option>
+                  <option  name="gram" value="gram">
+                    gram
+                  </option>
+                  <option  name="grams" value="grams">
+                    grams
+                  </option>
+                </select>
+              </label>
+              <label htmlFor="ingredient" className="labels">
+                Ingredient:
+                <input
+                  required
+                  className="add-inputs"
+                  name="food_item"
+                  type="text"
+                  placeholder="ingredient"
+                  onChange={(e) => this.updateIngredient(e, index)}
+                />
+              </label>
+            </div>
+          ))}
         </div>
         <button
           type="button"
@@ -258,33 +265,37 @@ export default class AddRecipe extends Component {
         >
           Add Another Ingredient
         </button>
-        <div className='instructions-form'>
-        <h2>Instructions</h2>
-        {this.state.instructions.map((instruction, index) => (
-          <div className="ingredients-form-divide">
-            <label className="labels">
-              Step Number
-              <input
-                type="text"
-                placeholder="Step number"
-                name="list_order"
-                id="list_order"
-                onChange={(e) => this.updateInstruction(e, index)}
-              />
-            </label>
-            <label className="labels">
-              Instruction
-              <textarea
-                className='text-area'
-                type="text"
-                placeholder="instruction"
-                name="step_info"
-                id="step_info"
-                onChange={(e) => this.updateInstruction(e, index)}
-              />
-            </label>
-          </div>
-        ))}
+        <div className="instructions-form">
+          <h2>Instructions</h2>
+          {this.state.instructions.map((instruction, index) => (
+            <div
+              className="ingredients-form-divide"
+              key={this.state.instructions[index]}
+            >
+              <label className="labels">
+                Step Number
+                <input
+                  required
+                  type="text"
+                  placeholder="Step number"
+                  name="list_order"
+                  id="list_order"
+                  onChange={(e) => this.updateInstruction(e, index)}
+                />
+              </label>
+              <label className="labels">
+                Instruction
+                <textarea
+                  className="text-area"
+                  type="text"
+                  placeholder="instruction"
+                  name="step_info"
+                  id="step_info"
+                  onChange={(e) => this.updateInstruction(e, index)}
+                />
+              </label>
+            </div>
+          ))}
         </div>
         <button
           type="button"
@@ -294,19 +305,20 @@ export default class AddRecipe extends Component {
         >
           Add Another Instruction
         </button>
-        <div className='tags-form'>
-        <h2>Tags</h2>
-        {this.state.allTags.map((tag, index) => (
-          <div>
-            <input
-              type="checkbox"
-              id={tag.id}
-              name="tag_id"
-              onChange={(e) => this.updateTags(e, index)}
-            />
-            <label>{tag.tag_name}</label>
-          </div>
-        ))}
+        <div className="tags-form">
+          <h2>Tags</h2>
+          {this.state.allTags.map((tag, index) => (
+            <div key={tag.id} required>
+              <input
+                required
+                type="radio"
+                id={tag.id}
+                name="tag_id"
+                onChange={(e) => this.updateTags(e, index)}
+              />
+              <label>{tag.tag_name}</label>
+            </div>
+          ))}
         </div>
         <button type="submit">Submit</button>
       </form>
