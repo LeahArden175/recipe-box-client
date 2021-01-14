@@ -202,7 +202,7 @@ export default class AddRecipe extends Component {
                   onChange={(e) => this.updateIngredient(e, index)}
                   className="select"
                 >
-                  <option hidden={true} value="Choose Unit">
+                  <option hidden={true} value="">
                     Choose Unit
                   </option>
                   <option name="tbs" value="tbs">
