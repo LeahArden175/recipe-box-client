@@ -81,7 +81,7 @@ export default class RecipeListRoute extends Component {
     ));
 
     return (
-      <div className="recipe-list-div">
+      <div>
         <div className="recipe-tag-search">
           <h4 className="tags-h4">Tags:</h4>
           {this.state.tags.map((tag) => (
@@ -98,10 +98,12 @@ export default class RecipeListRoute extends Component {
             All
           </button>
         </div>
+        <div className='items'>
             <Link className='list-items' to='add-recipe'>
               <h3 className='add-recipe-button'>Add Recipe</h3>
             </Link>
           {recipes}
+          </div>
       </div>
     );
   }

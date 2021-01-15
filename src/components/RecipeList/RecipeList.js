@@ -7,8 +7,8 @@ export default class RecipeList extends Component {
 
     return (
       <li className='list-items'>
-          <Link className='recipe-title' to={`recipe/${this.props.id}`}>
-          <h3 className='recipe-title'>{this.props.title}</h3>
+          <Link className='recipe-title-link' to={`recipe/${this.props.id}`}>
+          <h3>{this.props.title}</h3>
           </Link>
       </li>
     );

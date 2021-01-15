@@ -1,18 +1,49 @@
 .list-items {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  margin: auto;
+  border: solid #1f1817;
+  background-color: #682907;
+  margin-top: 15px;
+}
+.recipe-title {
+  font-size: 20px;
+  text-decoration: none;
+  color: white;
+  font-family: "Fraunces", serif;
+  font-weight: bold;
+}
+
+/*-----GROUPS AND ITEMS (DESKTOP)-----*/
+
+@media all and (min-width: 800px) {
+  .list-items {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 70%;
-    margin: auto;
+    width: 20%;
+    margin: 15px;
     border: solid #1f1817;
     background-color: #682907;
-    margin-top: 15px;
+    font-family: "Fraunces", serif;
+    font-weight: bold;
   }
-  .recipe-title{
-      font-size: 20px;
-      text-decoration: none;
-      color: white;
+  .recipe-title-link {
+    font-size: 20px;
+    text-decoration: none;
+    color: white;
+    font-family: "Fraunces", serif;
+    font-weight: bold;
+    width: 100%;
   }
-
-  
+  a.recipe-title-link:hover{
+    background-color: black;
+  }
+  a.list-items:hover{
+      background-color: black;
+  }
+}
