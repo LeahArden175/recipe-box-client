@@ -1,0 +1,9 @@
+.not-found{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 30px;
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Fraunces', serif;
+}
