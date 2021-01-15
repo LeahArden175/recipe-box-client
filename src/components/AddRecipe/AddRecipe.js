@@ -21,7 +21,7 @@ export default class AddRecipe extends Component {
         step_info: "",
       },
     ],
-    tag_id: '',
+    tag_id: "",
 
     allTags: [],
   };
@@ -56,53 +56,48 @@ export default class AddRecipe extends Component {
               authorization: `bearer ${TokenService.getAuthToken()}`,
             },
             body: JSON.stringify(ingredient),
-          })
-            .then((res) =>
-              !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json()
-            )
-            .then(() => {
-              const newInstructions = this.state.instructions;
-              const recipe_id = this.state.recipe_id;
-
-              newInstructions.map((instruction) => {
-                instruction = { recipe_id, ...instruction };
-                fetch(`${config.API_ENDPOINT}/instructions`, {
-                  method: "POST",
-                  headers: {
-                    "content-type": "application/json",
-                    authorization: `bearer ${TokenService.getAuthToken()}`,
-                  },
-                  body: JSON.stringify(instruction),
-                }).then((res) =>
-                  !res.ok
-                    ? res.json().then((e) => Promise.reject(e))
-                    : res.json()
-                );
-              });
-            })
-            .then(() => {
-              const tag = this.state.tag_id;
-              const recipe_id = this.state.recipe_id;
-              const tagWithId = {recipe_id, tag_id: tag}
-              console.log(tagWithId)
-
-              fetch(`${config.API_ENDPOINT}/recipe_tags`, {
-                    method: "POST",
-                    headers: {
-                      "content-type": "application/json",
-                      authorization: `bearer ${TokenService.getAuthToken()}`,
-                    },
-                    body: JSON.stringify(tagWithId),
-                  }).then((res) =>
-                    !res.ok
-                      ? res.json().then((e) => Promise.reject(e))
-                      : res.json()
-                  );
-            })
-            .then(() => {
-              this.props.history.push(`/recipe/${this.state.recipe_id}`);
-            });
+          }).then((res) =>
+            !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json()
+          );
         });
+      })
+      .then(() => {
+        const newInstructions = this.state.instructions;
+        const recipe_id = this.state.recipe_id;
+
+        newInstructions.map((instruction) => {
+          instruction = { recipe_id, ...instruction };
+          fetch(`${config.API_ENDPOINT}/instructions`, {
+            method: "POST",
+            headers: {
+              "content-type": "application/json",
+              authorization: `bearer ${TokenService.getAuthToken()}`,
+            },
+            body: JSON.stringify(instruction),
+          }).then((res) =>
+            !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json()
+          );
+        });
+      })
+      .then(() => {
+        const tag = this.state.tag_id;
+        const recipe_id = this.state.recipe_id;
+        const tagWithId = { recipe_id, tag_id: tag };
+        console.log(tagWithId);
+
+        fetch(`${config.API_ENDPOINT}/recipe_tags`, {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+            authorization: `bearer ${TokenService.getAuthToken()}`,
+          },
+          body: JSON.stringify(tagWithId),
+        }).then((res) =>
+          !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json()
+        );
+      })
+      .then(() => {
+        this.props.history.push(`/recipe/${this.state.recipe_id}`);
       });
   };
 
@@ -134,8 +129,8 @@ export default class AddRecipe extends Component {
 
   updateTags = (e) => {
     this.setState({
-      tag_id: e.target.id
-    })
+      tag_id: e.target.id,
+    });
   };
 
   componentDidMount = () => {
@@ -145,7 +140,7 @@ export default class AddRecipe extends Component {
   };
 
   render() {
-    console.log(this.state.tag_id);
+    console.log(this.state);
     return (
       <form onSubmit={this.handleSubmit} className="add-new-form">
         <div className="title-add-div">
@@ -302,10 +297,10 @@ export default class AddRecipe extends Component {
                 required
                 type="radio"
                 id={tag.id}
-                name='tags'
+                name="tags"
                 onChange={(e) => this.updateTags(e)}
               />
-              <label htmlFor='tags'>{tag.tag_name}</label>
+              <label htmlFor="tags">{tag.tag_name}</label>
             </div>
           ))}
         </div>
