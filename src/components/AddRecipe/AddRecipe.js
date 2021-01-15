@@ -21,11 +21,8 @@ export default class AddRecipe extends Component {
         step_info: "",
       },
     ],
-    tags: [
-      {
-        tag_id: "",
-      },
-    ],
+    tag_id: '',
+
     allTags: [],
   };
 
@@ -84,24 +81,23 @@ export default class AddRecipe extends Component {
               });
             })
             .then(() => {
-              const newTags = this.state.tags;
+              const tag = this.state.tag_id;
               const recipe_id = this.state.recipe_id;
+              const tagWithId = {recipe_id, tag_id: tag}
+              console.log(tagWithId)
 
-              newTags.map((tag) => {
-                tag = { recipe_id, ...tag };
-                fetch(`${config.API_ENDPOINT}/recipe_tags`, {
-                  method: "POST",
-                  headers: {
-                    "content-type": "application/json",
-                    authorization: `bearer ${TokenService.getAuthToken()}`,
-                  },
-                  body: JSON.stringify(tag),
-                }).then((res) =>
-                  !res.ok
-                    ? res.json().then((e) => Promise.reject(e))
-                    : res.json()
-                );
-              });
+              fetch(`${config.API_ENDPOINT}/recipe_tags`, {
+                    method: "POST",
+                    headers: {
+                      "content-type": "application/json",
+                      authorization: `bearer ${TokenService.getAuthToken()}`,
+                    },
+                    body: JSON.stringify(tagWithId),
+                  }).then((res) =>
+                    !res.ok
+                      ? res.json().then((e) => Promise.reject(e))
+                      : res.json()
+                  );
             })
             .then(() => {
               this.props.history.push(`/recipe/${this.state.recipe_id}`);
@@ -136,13 +132,10 @@ export default class AddRecipe extends Component {
     this.setState({ instructions: newInstructions });
   };
 
-  updateTags = (e, index) => {
-    const newTags = [...this.state.tags];
-    newTags[index] = {
-      ...newTags[index],
-      [e.target.name]: e.target.id,
-    };
-    this.setState({ tags: newTags });
+  updateTags = (e) => {
+    this.setState({
+      tag_id: e.target.id
+    })
   };
 
   componentDidMount = () => {
@@ -152,6 +145,7 @@ export default class AddRecipe extends Component {
   };
 
   render() {
+    console.log(this.state.tag_id);
     return (
       <form onSubmit={this.handleSubmit} className="add-new-form">
         <div className="title-add-div">
@@ -179,6 +173,7 @@ export default class AddRecipe extends Component {
                 Amount:
                 <input
                   required
+                  step=".01"
                   className="add-inputs"
                   type="number"
                   placeholder="amount"
@@ -208,7 +203,7 @@ export default class AddRecipe extends Component {
                   <option name="cup" value="cup">
                     cup
                   </option>
-                  <option  name="cups" value="cups">
+                  <option name="cups" value="cups">
                     cups
                   </option>
                   <option name="quart" value="quart">
@@ -217,22 +212,22 @@ export default class AddRecipe extends Component {
                   <option name="quarts" value="quarts">
                     quarts
                   </option>
-                  <option  name="lb" value="lb">
+                  <option name="lb" value="lb">
                     lb
                   </option>
                   <option name="lbs" value="lbs">
                     lbs
                   </option>
-                  <option  name="oz" value="oz">
+                  <option name="oz" value="oz">
                     oz
                   </option>
-                  <option  name="ml" value="ml">
+                  <option name="ml" value="ml">
                     ml
                   </option>
-                  <option  name="gram" value="gram">
+                  <option name="gram" value="gram">
                     gram
                   </option>
-                  <option  name="grams" value="grams">
+                  <option name="grams" value="grams">
                     grams
                   </option>
                 </select>
@@ -307,10 +302,10 @@ export default class AddRecipe extends Component {
                 required
                 type="radio"
                 id={tag.id}
-                name="tag_id"
-                onChange={(e) => this.updateTags(e, index)}
+                name='tags'
+                onChange={(e) => this.updateTags(e)}
               />
-              <label>{tag.tag_name}</label>
+              <label htmlFor='tags'>{tag.tag_name}</label>
             </div>
           ))}
         </div>
