@@ -60,7 +60,6 @@
     margin-top: 20px;
     border-top: solid;
 }
-
 button{
     box-shadow: inset 0px 0px 14px -3px #b5b8ae;
     background: linear-gradient(to bottom, #681b1b 5%, #300707 100%);
@@ -80,9 +79,107 @@ button{
     font-weight: bold;
     font-family: 'Fraunces', serif;
 }
-
 .text-area{
     font-family: 'Fraunces', serif;
     min-height: 5em;
 	max-height: 50vh;
+}
+/*-----GROUPS AND ITEMS (DESKTOP)-----*/
+
+@media all and (min-width: 800px) {
+    .add-new-form {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        text-align: center;
+        padding: 0 20px;
+        margin: 350px;
+        margin-top: 10px;
+        border-radius: 15px;
+        text-align: left;
+      }
+      .add-inputs {
+        margin-left: 10px;
+      }
+      .title-add-div{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        margin: auto;
+        margin-top: 5px;
+        padding-bottom: 20px;
+        border-bottom: solid;
+        text-align: left;
+        width: 430px;
+      }
+      .ingredients-form{
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          width: 430px;
+          margin: auto;
+          text-align: left;
+      }
+      .ingredients-form-divide{
+          border: solid;
+          padding: 10px;
+          margin-bottom: 15px;
+      }
+      .labels{
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 10px;
+      }
+      .select{
+          display: flex;
+          justify-content: space-between;
+          width: 25%;
+      }
+      .instructions-form{
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          text-align: left;
+          margin-top: 20px;
+          border-top: solid;
+          width: 430px;
+          margin: auto;
+      }
+      .tags-form{
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          text-align: left;
+          margin-top: 20px;
+          border-top: solid;
+          width: 430px;
+          margin: auto;
+      }
+      button{
+          display: flex;
+          box-shadow: inset 0px 0px 14px -3px #b5b8ae;
+          background: linear-gradient(to bottom, #681b1b 5%, #300707 100%);
+          background-color: #3c3d41;
+          border-radius: 6px;
+          border: 1px solid #b8b0ad;
+          display: inline-block;
+          cursor: pointer;
+          color: #f2d0d0;
+          font-size: 15px;
+          font-weight: bold;
+          margin: 20px auto;
+          height: 50px;
+          padding: 10px;
+          text-decoration: none;
+          text-shadow: 0px 1px 0px #0b0b0c;
+          font-weight: bold;
+          font-family: 'Fraunces', serif;
+          width: 200px;
+      }
+      .text-area{
+          font-family: 'Fraunces', serif;
+          min-height: 5em;
+          max-height: 50vh;
+      }
 }
