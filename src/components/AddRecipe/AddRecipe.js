@@ -173,7 +173,7 @@ export default class AddRecipe extends Component {
           {this.state.ingredients.map((ingredient, index) => (
             <div
               className="ingredients-form-divide"
-              key={this.state.ingredients[index]}
+              key={`ingredients ${index}`}
             >
               <label htmlFor="amount" className="labels">
                 Amount:
@@ -264,7 +264,7 @@ export default class AddRecipe extends Component {
           {this.state.instructions.map((instruction, index) => (
             <div
               className="ingredients-form-divide"
-              key={this.state.instructions[index]}
+              key={`instructions ${index}`}
             >
               <label className="labels">
                 Step Number
