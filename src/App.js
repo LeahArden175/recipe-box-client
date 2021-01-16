@@ -14,7 +14,6 @@ import EditIngredientRoute from './routes/EditIngredientRoute/EditIngredientRout
 import EditInstructionRoute from './routes/EditInstructionRoute/EditInstructionRoute'
 import EditTitleRoute from './routes/EditTitleRoute/EditTitleRoute'
 import Context from './Context'
-import PublicRoute from './components/PublicRoutes/PublicRoutes'
 
 
 export default class App extends Component {
@@ -40,14 +39,14 @@ export default class App extends Component {
       <Header />
       <main>
         <Switch>
-          <PublicRoute exact path="/" component={LandingRoute} />
+          <Route exact path="/" component={LandingRoute} />
           <PrivateRoute exacts path="/edit-recipe/:id" component={EditRecipeRoute}/>
           <PrivateRoute exact path="/add-recipe" component={AddRecipeRoute} />
           <PrivateRoute exact path="/edit-instruction/:id" component={EditInstructionRoute} />
           <PrivateRoute exact path="/recipe-list" component={RecipeListRoute} />
           <PrivateRoute exact path='/edit-title/:id' component={EditTitleRoute}/>
           <PrivateRoute exact path="/recipe/:id" component={TestRecipeRoute} />
-          <PublicRoute  exact path="/registration" component={RegistrationForm} />
+          <Route exact path="/registration" component={RegistrationForm} />
           <PrivateRoute exact path='/edit-ingredient/:id' component={EditIngredientRoute}/>
           <Route component={NotFoundRoute} />
         </Switch>
