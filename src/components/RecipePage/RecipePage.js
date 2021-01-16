@@ -77,15 +77,17 @@ export default class RecipePage extends Component {
 
     return (
       <div className="recipe-page-div">
+        <div className="title-div">
         <h2 className="title-h2">{findRecipe.title}</h2>
-        <p className="date">Created: {formattedDate}</p>
-        <div className="edit-button-div">
-          <Link
+        <Link
             to={`/edit-recipe/${this.props.recipeId}`}
-            className="recipe-button"
+            className="edit-recipe-button"
           >
             Edit
           </Link>
+        </div>
+        <p className="date">Created: {formattedDate}</p>
+        <div className="edit-button-div">
         </div>
         <p className="ingredient-instruction-title">Ingredients:</p>
         <div className="ingredients-div">

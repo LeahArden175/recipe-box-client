@@ -57,7 +57,7 @@ export default class Recipe extends Component {
         <h2 className="title-h2">{findRecipe.title}</h2>
           <Link
             to={`/edit-title/${this.props.recipeId}`}
-            className="recipe-button-edit"
+            className="-edit"
           >
             Edit
           </Link>
