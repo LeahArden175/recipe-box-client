@@ -19,7 +19,7 @@ export default class Header extends Component {
         <div>
           <div className="Header__logged-in">
             <Link to="/recipe-list" className="link">
-              Your Recipes!
+              Your Recipes
             </Link>
             <Link onClick={this.handleLogoutClick} to="/" className="link">
               Logout

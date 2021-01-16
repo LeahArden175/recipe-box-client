@@ -1,12 +1,11 @@
 import React, { Component } from "react";
-import moment from "moment";
 import { Link } from "react-router-dom";
 import InstructionEditBlock from "../InstructionEditBlock/InstructionEditBlock";
 import IngredientEditBlock from "../IngredientEditBlock/IngredientEditBlock";
 import "./RecipeEditPage.css";
 
 export default class Recipe extends Component {
- 
+
   render() {
     const recipes = this.props.recipes;
     const instructions = this.props.instructions;
@@ -20,10 +19,9 @@ export default class Recipe extends Component {
       ingredients &&
       ingredients.filter((ingredient) => ingredient.recipe_id == id);
 
-      const sortedIngredients = findIngredients.sort((a, b) => a.id - b.id)  
+    const sortedIngredients = findIngredients.sort((a, b) => a.id - b.id);
 
     const sortedInstructions = findInstructions.sort((a, b) => a.id - b.id);
-
 
     const getInstructions = sortedInstructions.map((instruction, index) => (
       <InstructionEditBlock
@@ -52,16 +50,16 @@ export default class Recipe extends Component {
 
     return (
       <div className="recipe-page-div">
-        <p className='edit-message'>Choose which item you would like to edit</p>
-        <div className='edit-button-div'>
-        <h2 className="title-h2">{findRecipe.title}</h2>
+        <p className="edit-message">Choose which item you would like to edit</p>
+        <div className="edit-button-div">
+          <h2 className="title-h2">{findRecipe.title}</h2>
           <Link
             to={`/edit-title/${this.props.recipeId}`}
-            className="-edit"
+            className="edit-recipe-button"
           >
             Edit
           </Link>
-          </div>
+        </div>
         <div className="ingredients-div">
           <ul className="ingredients-list">{getIngredients}</ul>
         </div>
