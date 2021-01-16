@@ -59,13 +59,12 @@
 @media all and (min-width: 800px) {
   .new-user-form-div {
     display: flex;
-    flex-direction: column;
-    align-content: center;
-    justify-items: center;
-    text-align: center;
-    margin: auto;
-    font-family: "Merienda", cursive;
-    width: 100%;
+  flex-direction: column;
+  align-content: center;
+  justify-items: center;
+  text-align: center;
+  margin: auto;
+  font-family: "Merienda", cursive;
   }
 
   .new-user-form {
@@ -74,16 +73,13 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    border: solid;
-    padding: 20px;
-    width: 30%;
-    background-color: #8d9f87;
-    border-radius: 15px;
-    text-align: left;
+    padding: 30px;
+    font-weight: bold;
+    font-family: 'Fraunces', serif;
   }
 
   .input {
-    width: 60%;
+    width: 200px;
     margin: auto;
   }
 
@@ -102,7 +98,7 @@
     color: #f2d0d0;
     font-size: 15px;
     font-weight: bold;
-    margin: auto;
+    margin: 10px;
     margin-top: 15px;
     height: 35px;
     padding: 10px;
@@ -110,6 +106,7 @@
     text-shadow: 0px 1px 0px #0b0b0c;
     font-weight: bold;
     font-family: "Fraunces", serif;
+    width: 100px;
   }
 
   .new-user-button-div {
