@@ -39,29 +39,15 @@
 /*-----GROUPS AND ITEMS (DESKTOP)-----*/
 
 @media all and (min-width: 800px) {
-  .login-form-div {
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    justify-items: center;
-    text-align: center;
-    margin: auto;
-    font-family: "Merienda", cursive;
-    width: 100%;
-  }
-
   .loginForm {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    border: solid;
-    padding: 20px;
-    width: 30%;
-    background-color: #8d9f87;
-    border-radius: 15px;
-    text-align: left;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 30px;
+  font-weight: bold;
+  font-family: 'Fraunces', serif;
   }
 
   .sign-up-p {
