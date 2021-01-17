@@ -39,6 +39,7 @@
     font-weight: bold;
     color: white;
     text-decoration: none;
+    font-size: 25px;
 }
 .items {
     display: flex;
