@@ -9,12 +9,13 @@
   background-color: #682907;
   margin-top: 15px;
 }
-.recipe-title {
+.recipe-title-link {
   font-size: 20px;
   text-decoration: none;
   color: white;
   font-family: "Fraunces", serif;
   font-weight: bold;
+  width: 100%;
 }
 
 /*-----GROUPS AND ITEMS (DESKTOP)-----*/
