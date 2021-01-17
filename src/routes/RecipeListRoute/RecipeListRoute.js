@@ -100,7 +100,7 @@ export default class RecipeListRoute extends Component {
         </div>
         <div className='items'>
             <Link className='list-items' to='add-recipe'>
-              <h3 className='add-recipe-button'>Add Recipe</h3>
+              <p className='add-recipe-button'>Add Recipe</p>
             </Link>
           {recipes}
           </div>

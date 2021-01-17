@@ -38,6 +38,7 @@
     font-family: 'Fraunces', serif;
     font-weight: bold;
     color: white;
+    text-decoration: none;
 }
 .items {
     display: flex;
