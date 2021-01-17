@@ -32,3 +32,33 @@ Screenshots:
 
 ![picture](screenshots/recipepage2.jpeg)
 ![picture](screenshots/recipepage3.jpeg)
+
+Technology:
+
+Front End
+
+    -React
+    -HTML
+    -CSS(No frameworks)
+
+Testing
+
+    -Jest
+
+Production
+
+    -Deployed using Vercel
+
+-------------------------
+
+Getting Started
+
+Run npm install to load dependencies
+
+Run npm test to ensure a stable build
+
+This is only the front end client, to develop locally you'll need the backend server as well.
+
+To get the backend up and running see https://github.com/LeahArden175/recipe-box-server
+
+Deployments are handled through vercel and can be run via npm run deploy
