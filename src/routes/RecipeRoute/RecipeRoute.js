@@ -50,25 +50,29 @@ export default class RecipeRoute extends Component {
   };
 
   componentDidMount() {
-    this.getRecipes();
-    this.getInstructions();
-    this.getIngredients();
+    this.getRecipes()
+    .then(() => {
+      this.getInstructions();
+    })
+    .then(() => {
+      this.getIngredients();
+    })
   }
 
   render() {
     const recipeId = this.props.match.params.id;
     const history = this.props.history;
-    const recipes = this.state.recipes;
-    const instructions = this.state.instructions;
-    const ingredients = this.state.ingredients;
+    // const recipes = this.state.recipes;
+    // const instructions = this.state.instructions;
+    // const ingredients = this.state.ingredients;
     return (
       <section className="recipe-section">
         <RecipePage
-          instructions={instructions}
+          //instructions={instructions}
           recipeId={recipeId}
           history={history}
-          recipes={recipes}
-          ingredients={ingredients}
+          // recipes={recipes}
+          // ingredients={ingredients}
         />
       </section>
     );

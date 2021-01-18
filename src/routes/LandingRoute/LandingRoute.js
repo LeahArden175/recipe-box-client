@@ -25,7 +25,7 @@ export default class LandingRoute extends Component {
           </p>
           <p className="landing-page-info">
             Log your favorite recipes and use tags to make them easy to find.
-            You can also use tags to find recipes for specific ingreidents!
+            You can also use tags to find recipes for specific ingredients!
           </p>
         <div className="login-info">
           <p className="landing-page-p">Get Started!</p>

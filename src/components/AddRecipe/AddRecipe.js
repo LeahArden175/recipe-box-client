@@ -83,7 +83,6 @@ export default class AddRecipe extends Component {
         const tag = this.state.tag_id;
         const recipe_id = this.state.recipe_id;
         const tagWithId = { recipe_id, tag_id: tag };
-        console.log(tagWithId);
 
         fetch(`${config.API_ENDPOINT}/recipe_tags`, {
           method: "POST",
@@ -140,7 +139,6 @@ export default class AddRecipe extends Component {
   };
 
   render() {
-    console.log(this.state);
     return (
       <form onSubmit={this.handleSubmit} className="add-new-form">
         <div className="title-add-div">

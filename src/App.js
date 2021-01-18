@@ -9,7 +9,7 @@ import LandingRoute from "./routes/LandingRoute/LandingRoute";
 import Header from "./components/Header/Header";
 import RegistrationForm from './components/RegistrationForm/RegistrationForm'
 import PrivateRoute from './components/PrivateRoute/PrivateRoute'
-import TestRecipeRoute from './routes/TestRecipeRoute/TestRecipeRoute'
+import RecipeRoute from './routes/RecipeRoute/RecipeRoute'
 import EditIngredientRoute from './routes/EditIngredientRoute/EditIngredientRoute'
 import EditInstructionRoute from './routes/EditInstructionRoute/EditInstructionRoute'
 import EditTitleRoute from './routes/EditTitleRoute/EditTitleRoute'
@@ -45,7 +45,7 @@ export default class App extends Component {
           <PrivateRoute exact path="/edit-instruction/:id" component={EditInstructionRoute} />
           <PrivateRoute exact path="/recipe-list" component={RecipeListRoute} />
           <PrivateRoute exact path='/edit-title/:id' component={EditTitleRoute}/>
-          <PrivateRoute exact path="/recipe/:id" component={TestRecipeRoute} />
+          <PrivateRoute exact path="/recipe/:id" component={RecipeRoute} />
           <Route exact path="/registration" component={RegistrationForm} />
           <PrivateRoute exact path='/edit-ingredient/:id' component={EditIngredientRoute}/>
           <Route component={NotFoundRoute} />
