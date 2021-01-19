@@ -1,6 +1,6 @@
 Recipe Box
 
-This app allows users to add their recipes and give them a tag so they are easier to fidn!
+This app allows users to add their recipes and give them a tag so they are easier to find!
 
 You can find the live app here https://recipe-box-12.vercel.app/
 
